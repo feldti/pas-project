@@ -1,0 +1,234 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <title>Gemstone/S - Datenbank &gt; Gemstone - Crontabs, Backup, GC</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta name="description" content="Regelmäßige Aufgaben - crontabs Unter Linux werden regelmäßig auszuführende Aufgaben als Jobs in einer sogenannten crontab-Datei definiert. Bei Gemstone fallen in der Regel..." />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <link type="text/css" href="custom.css" rel="stylesheet" />
+
+   <style TYPE="text/css" media="screen"> 
+      html, body { margin:0; 
+        padding:0; 
+        background: #ffffff; 
+      } 
+      div#printheader { display: none; }
+      #idheader { 
+        width:100%; 
+        height:auto; 
+        padding: 0; 
+        margin: 0;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+      } 
+      /* The "min-height" for "#idheader table" ensures that the (blue) header of the topic
+         has at least the same height as the header of the navigation panel left of it */
+      #idheader table { background: #f5f5f5; min-height: 59px }             
+      #idheader h1 span { color: #157fcc }     
+      #idnav {
+        text-align: right;
+        width: 126px;
+        vertical-align: middle;        
+      } 
+      #idnav a { text-decoration: none }
+      #idnav span {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-left: 4px;
+        background:url('hm_webhelp_buttons_grey.png') top left no-repeat;
+      } 
+      #idnav a span {
+        background-image:url('hm_webhelp_buttons_blue.png');
+      } 
+      #idnav a span:hover {
+        background-image:url('hm_webhelp_buttons_orange.png');
+      } 
+      #idnav span.hmbtnprev { background-position: 0 -32px }
+      #idnav span.hmbtnnext { background-position: -24px -32px }
+      #idnav span.hmbtntop  { background-position: -48px -32px }
+      #idnav span.hmbtntoggle  { width: 20px; background-position: -70px -32px }
+      #idnav span.hmbtnprint  { background-position: -88px -32px }
+
+      #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+      #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+      #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+      #callout-table a {text-decoration: none; color: blue;}
+      #callout-table a:visited {text-decoration: none; color: blue;}
+      #overview-table a {text-decoration: none; color: black;}
+      #overview-table a:visited {text-decoration: none; color: black;}
+      #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}       
+      p.help-url { margin: 20px 0 5px 0; text-align: center; font-size: 80%; text-decoration: none }      
+      #switchtoggles { text-align: right; padding: 0 2px 0 0; font-size: 90%; } 
+      .sync-toc { color: #157fcc; font-size: 8pt; font-weight: bold; display: none; }
+      .sync-toc a { color: #157fcc; text-decoration: none; font-weight: bold;}
+      .sync-toc a:visited { color: #157fcc; }
+      .sync-toc a:hover { text-decoration: underline; }
+      a.hmanchor { display: inline-block; margin-top: -4em; padding-top: 4em }	  
+   </style>
+   <style TYPE="text/css" media="print">
+      div#idheader, img.dropdown-toggle-icon, p.help-url { display:none } 
+   </style>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <script type="text/javascript">
+     HMSyncTOC("index.html", "gemstone---crontabs.html");
+   </script>
+   <script type="text/javascript" src="highlight.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){highlight();});
+   </script>
+</head>
+<body>
+
+
+<div id="printheader"><h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Gemstone - Crontabs, Backup, GC</span></h1>
+</div>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left; vertical-align:bottom">
+      <p class="sync-toc">&lt;&lt; <a rel="nofollow" href="index.html?gemstone---crontabs.html" target="_top">Click to Display Table of Contents</a> &gt;&gt;</p>
+      <p class="crumbs"><b>Navigation:</b>&nbsp;
+      
+      <a href="datenbank---gemsdtone_s.html">Gemstone/S - Datenbank</a>&nbsp;&gt;</p>
+   
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Gemstone - Crontabs, Backup, GC</span></h1>
+
+    </td>
+    <td class="topichead" id="idnav">
+      
+      <a href="gemstone---linux-service-suppo.html" title="Previous Topic"><span class="hmbtnprev"></span></a>
+      <a href="datenbank---gemsdtone_s.html" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="gemstone---restore.html" title="Next Topic"><span class="hmbtnnext"></span></a>
+      
+    </td>
+  </tr>  
+</table>
+</div>
+</div>  
+
+<div id="idcontent"><div id="innerdiv">
+<!-- Ask Internet Explorer 6.users to update their obsolete and dangerous browser --> 
+<!--[if lt IE 7]><div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
+
+<!--ZOOMRESTART-->
+<h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">Regelmäßige Aufgaben - crontabs</span></h2>
+<p class="p_BodyText"><span class="f_BodyText">Unter Linux werden regelmäßig auszuführende Aufgaben als Jobs in einer sogenannten crontab-Datei definiert. Bei Gemstone fallen in der Regel mindestens drei Jobs an:</span></p>
+<p class="p_BodyText" style="text-indent: 0; padding-left: 13px; margin-left: 0;"><span class="f_BodyText" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#8226;</span><span class="f_BodyText">Backups von der Gemstone Datenbank anlegen</span></p>
+<p class="p_BodyText" style="text-indent: 0; padding-left: 13px; margin-left: 0;"><span class="f_BodyText" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#8226;</span><span class="f_BodyText">Alte Backups löschen</span></p>
+<p class="p_BodyText" style="text-indent: 0; padding-left: 13px; margin-left: 0;"><span class="f_BodyText" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#8226;</span><span class="f_BodyText">Aufräumen in der Datenbank</span></p>
+<p class="p_BodyText"><span class="f_BodyText">Mit der installierten Runtime (pas/git/GsDevKit_stones) auf dem Server gibt es Templates (Unterverzeichnis &quot;crontabs&quot;) für ein crontab unter Linux. Diese sollte den Gegebenheiten angepaßt werden und für den Anwender genutzt werden. Die Jobs sollten als Jobs des Anwenders laufen.</span></p>
+<p class="p_BodyText"><span class="f_BodyText">Hier ein Beispiel für ein crontab (für einen Benutzer &quot;pas&quot; in einer VM) - man beachte die Vorabdefinitionen. Diese setzen den richtigen Pfad.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">#&nbsp;Edit&nbsp;this&nbsp;file&nbsp;to&nbsp;introduce&nbsp;tasks&nbsp;to&nbsp;be&nbsp;run&nbsp;by&nbsp;cron.</span><br />
+<span class="f_CodeExample">#&nbsp;&nbsp;</span><br />
+<span class="f_CodeExample">#&nbsp;Each&nbsp;task&nbsp;to&nbsp;run&nbsp;has&nbsp;to&nbsp;be&nbsp;defined&nbsp;through&nbsp;a&nbsp;single&nbsp;line</span><br />
+<span class="f_CodeExample">#&nbsp;indicating&nbsp;with&nbsp;different&nbsp;fields&nbsp;when&nbsp;the&nbsp;task&nbsp;will&nbsp;be&nbsp;run</span><br />
+<span class="f_CodeExample">#&nbsp;and&nbsp;what&nbsp;command&nbsp;to&nbsp;run&nbsp;for&nbsp;the&nbsp;task</span><br />
+<span class="f_CodeExample">#&nbsp;&nbsp;</span><br />
+<span class="f_CodeExample">#&nbsp;To&nbsp;define&nbsp;the&nbsp;time&nbsp;you&nbsp;can&nbsp;provide&nbsp;concrete&nbsp;values&nbsp;for</span><br />
+<span class="f_CodeExample">#&nbsp;minute&nbsp;(m),&nbsp;hour&nbsp;(h),&nbsp;day&nbsp;of&nbsp;month&nbsp;(dom),&nbsp;month&nbsp;(mon),</span><br />
+<span class="f_CodeExample">#&nbsp;and&nbsp;day&nbsp;of&nbsp;week&nbsp;(dow)&nbsp;or&nbsp;use&nbsp;'*'&nbsp;in&nbsp;these&nbsp;fields&nbsp;(for&nbsp;'any').</span><br />
+<span class="f_CodeExample">#&nbsp;&nbsp;</span><br />
+<span class="f_CodeExample">#&nbsp;Notice&nbsp;that&nbsp;tasks&nbsp;will&nbsp;be&nbsp;started&nbsp;based&nbsp;on&nbsp;the&nbsp;cron's&nbsp;system</span><br />
+<span class="f_CodeExample">#&nbsp;daemon's&nbsp;notion&nbsp;of&nbsp;time&nbsp;and&nbsp;timezones.</span><br />
+<span class="f_CodeExample">#&nbsp;&nbsp;</span><br />
+<span class="f_CodeExample">#&nbsp;Output&nbsp;of&nbsp;the&nbsp;crontab&nbsp;jobs&nbsp;(including&nbsp;errors)&nbsp;is&nbsp;sent&nbsp;through</span><br />
+<span class="f_CodeExample">#&nbsp;email&nbsp;to&nbsp;the&nbsp;user&nbsp;the&nbsp;crontab&nbsp;file&nbsp;belongs&nbsp;to&nbsp;(unless&nbsp;redirected).</span><br />
+<span class="f_CodeExample">#&nbsp;&nbsp;</span><br />
+<span class="f_CodeExample">#&nbsp;For&nbsp;example,&nbsp;you&nbsp;can&nbsp;run&nbsp;a&nbsp;backup&nbsp;of&nbsp;all&nbsp;your&nbsp;user&nbsp;accounts</span><br />
+<span class="f_CodeExample">#&nbsp;at&nbsp;5&nbsp;a.m&nbsp;every&nbsp;week&nbsp;with:</span><br />
+<span class="f_CodeExample">#&nbsp;0&nbsp;5&nbsp;*&nbsp;*&nbsp;1&nbsp;tar&nbsp;-zcf&nbsp;/var/backups/home.tgz&nbsp;/home/</span><br />
+<span class="f_CodeExample">#&nbsp;&nbsp;</span><br />
+<span class="f_CodeExample">#&nbsp;For&nbsp;more&nbsp;information&nbsp;see&nbsp;the&nbsp;manual&nbsp;pages&nbsp;of&nbsp;crontab(5)&nbsp;and&nbsp;cron(8)</span><br />
+<span class="f_CodeExample">#&nbsp;&nbsp;</span><br />
+<span class="f_CodeExample">#&nbsp;m&nbsp;h&nbsp;&nbsp;dom&nbsp;mon&nbsp;dow&nbsp;&nbsp;&nbsp;command</span><br />
+<span class="f_CodeExample">HOME=/home/pas</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">SHELL=/bin/bash</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">PAS_HOME_PATH=/home/pas/pas</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">PATH=/home/pas/pas/git/superDoit/bin:/home/pas/pas/git/GsDevKit_stones/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">STONES_DATA_HOME=/home/pas/pas/registry</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">10&nbsp;15&nbsp;*&nbsp;*&nbsp;*&nbsp;&nbsp;pas_cron_gc.sh&nbsp;es2025&nbsp;work&nbsp;&gt;/home/pas/cron.txt&nbsp;2&gt;&amp;1</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">15&nbsp;15&nbsp;*&nbsp;*&nbsp;*&nbsp;&nbsp;pas_cron_backup.sh&nbsp;es2025&nbsp;work&nbsp;/home/pas/pas/work/stones/es2025/backups</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">00&nbsp;00&nbsp;*&nbsp;*&nbsp;*&nbsp;&nbsp;find&nbsp;/home/pas/pas/work/stones/es2025/backups/*&nbsp;-mtime&nbsp;+7&nbsp;-exec&nbsp;rm&nbsp;{}&nbsp;\;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">Datenbank klein halten - Garbage Collector (GC)</span></h2>
+<p class="p_BodyText"><span class="f_BodyText">Die Datenbanken von Gemstone mögen gerne wachsen, daher sollte das Garbage Collector-Skript (&quot;pas_cron_gc.sh&quot;) regelmäßig ausgeführt werden:</span></p>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">pas_cron_gc.sh&nbsp;&lt;stonename&gt;&nbsp;&lt;registry&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">Bei den kostenlosen Lizenzen von Gemstone/S ist der Speichergröße begrenzt - daher muß man hier besonders auf Datenbankgröße achten. Es könnte in solchen Fällen sinnvoll sein, das Skript jede Stunde auszuführen.</span></p>
+<h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_BodyText">Bei den kostenlosen Lizenzen ist auch die Anzahl der gleichzeitig ausgeführten Skripte begranzt - daher sollten sich die Skripte zeitlich nicht überlagern (was sowieso keine gute Idee ist).</span></h2>
+<h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">Datenbank sichern</span></h2>
+<p class="p_BodyText"><span class="f_BodyText">Oben im Template kann man auch einen Aufruf zum Sichern der Datenbank sehen (Fullbackup):</span></p>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">pas_cron_backup.sh&nbsp;&lt;stonename&gt;&nbsp;&lt;registry&gt;&nbsp;/datadisk/pas/&lt;registry&gt;/stones/&lt;stonename&gt;/backups</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">Wo das Backup abgelegt wird - das kann jeder für sich entscheiden. </span></p>
+<p class="p_BodyText"><span class="f_BodyText">Das Backup ist komprimiert und entspricht ungefähr 1/7 der aktuellen genutzten Repository-Größe. Wenn also das laufende Repository viel, viel größer ist, kann man daraus erkennen, das viel Leerraum in dem laufenden Repository vorhanden ist. Das kann passieren, wenn über längere Zeit der GC nicht lief. </span></p>
+<p class="p_BodyText"><span class="f_BodyText">Wenn die Backup-Skripte lauifen, sammeln sich Backups an. Das kann dann so aussehen:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">-rw-rw-r--&nbsp;1&nbsp;mf&nbsp;mf&nbsp;160932372&nbsp;Mai&nbsp;26&nbsp;01:00&nbsp;2026_05_25_23_00-logid-10-linux_x86_64-&lt;stonename&gt;-30701.gz</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">-rw-rw-r--&nbsp;1&nbsp;mf&nbsp;mf&nbsp;160905115&nbsp;Mai&nbsp;27&nbsp;01:00&nbsp;2026_05_26_23_00-logid-10-linux_x86_64-&lt;stonename&gt;-30701.gz</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">-rw-rw-r--&nbsp;1&nbsp;mf&nbsp;mf&nbsp;161149285&nbsp;Mai&nbsp;28&nbsp;01:00&nbsp;2026_05_27_23_00-logid-10-linux_x86_64-&lt;stonename&gt;-30701.gz</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">-rw-rw-r--&nbsp;1&nbsp;mf&nbsp;mf&nbsp;160870238&nbsp;Mai&nbsp;29&nbsp;01:00&nbsp;2026_05_28_23_00-logid-10-linux_x86_64-&lt;stonename&gt;-30701.gz</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">-rw-rw-r--&nbsp;1&nbsp;mf&nbsp;mf&nbsp;161015542&nbsp;Mai&nbsp;30&nbsp;01:00&nbsp;2026_05_29_23_00-logid-10-linux_x86_64-&lt;stonename&gt;-30701.gz</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">-rw-rw-r--&nbsp;1&nbsp;mf&nbsp;mf&nbsp;161113908&nbsp;Mai&nbsp;31&nbsp;01:00&nbsp;2026_05_30_23_00-logid-10-linux_x86_64-&lt;stonename&gt;-30701.gz</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">-rw-rw-r--&nbsp;1&nbsp;mf&nbsp;mf&nbsp;161080377&nbsp;Jun&nbsp;&nbsp;1&nbsp;01:00&nbsp;2026_05_31_23_00-logid-10-linux_x86_64-&lt;stonename&gt;-30701.gz</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">-rw-rw-r--&nbsp;1&nbsp;mf&nbsp;mf&nbsp;160924973&nbsp;Jun&nbsp;&nbsp;2&nbsp;01:00&nbsp;2026_06_01_23_00-logid-10-linux_x86_64-&lt;stonename&gt;-30701.gz</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">Der Dateiname gibt Auskunft über die Plattform, auf der die Anwendung lief (linux_x86_64), den Namen der Datenbank und die Versionsnummer (3.7.1). Alles Informationen, die man beim Restore benötigt.</span></p>
+<p class="p_BodyText"><span class="f_BodyText">Die Datenbanken scheinen zwischen den Platformen austauschbar zu sein - WENN keine nativen externen Treiber genutzt werden (RabbitMQ oder PostgreSQL) - also praktisch nicht im ersten Schritt. Aber man kann die Datenbank auf einer anderen Platform installieren (z.B: Raspberry PI) und dann die Softwarepakete PostgreSQL und RabbitMQ erneut installieren. Dann sind auch die Pfade zu den externen Bibliotheken korrigiert.</span></p>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript">
+
+
+
+  $(document).ready(function(){
+    $(window).bind('resize', function() {
+      var y = $('#idheader').height(); 
+      $('#idcontent').css('margin-top', y);
+      var par = window.parent;
+      if ($( par ).width() <= $( window ).width()+20) {
+        $('#idheader').css('position', 'relative');
+        $('#idcontent').css('margin-top', 0);
+        $('#idbacktotop').css('display', 'block');
+        $('.hmanchor').css('margin-top', -20);
+	$('.hmanchor').css('padding-top', 20);
+      }
+      else {
+        $('#idheader').css('position', 'fixed');
+        $('#idcontent').css('margin-top', $('#idheader').height());
+        $('#idbacktotop').css('display', 'none');
+        $('.hmanchor').css('margin-top', -y-20);
+	$('.hmanchor').css('padding-top', y+20);
+      }
+    });
+    
+    $(window).resize(); //trigger event for initially small displays
+  });
+
+if ((!parent.hmNavigationFrame) && (parent.location) && (parent.location.href)) { $('.sync-toc').show();$('p.crumbs').hide();}
+
+</script>
+</body>
+</html>

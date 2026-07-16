@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <title>Gemstone/S - Datenbank &gt; Gemstone - Linux-Service Support</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta name="description" content="Start-/Stopskripte Zum Starten und Stoppen einer PAS Anwendung als Service muß man aus dem Checkout des GsDevKit_stones im Unterverzeichnis &quot;pas-app-templates&quot; die Skripte..." />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <link type="text/css" href="custom.css" rel="stylesheet" />
+
+   <style TYPE="text/css" media="screen"> 
+      html, body { margin:0; 
+        padding:0; 
+        background: #ffffff; 
+      } 
+      div#printheader { display: none; }
+      #idheader { 
+        width:100%; 
+        height:auto; 
+        padding: 0; 
+        margin: 0;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+      } 
+      /* The "min-height" for "#idheader table" ensures that the (blue) header of the topic
+         has at least the same height as the header of the navigation panel left of it */
+      #idheader table { background: #f5f5f5; min-height: 59px }             
+      #idheader h1 span { color: #157fcc }     
+      #idnav {
+        text-align: right;
+        width: 126px;
+        vertical-align: middle;        
+      } 
+      #idnav a { text-decoration: none }
+      #idnav span {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-left: 4px;
+        background:url('hm_webhelp_buttons_grey.png') top left no-repeat;
+      } 
+      #idnav a span {
+        background-image:url('hm_webhelp_buttons_blue.png');
+      } 
+      #idnav a span:hover {
+        background-image:url('hm_webhelp_buttons_orange.png');
+      } 
+      #idnav span.hmbtnprev { background-position: 0 -32px }
+      #idnav span.hmbtnnext { background-position: -24px -32px }
+      #idnav span.hmbtntop  { background-position: -48px -32px }
+      #idnav span.hmbtntoggle  { width: 20px; background-position: -70px -32px }
+      #idnav span.hmbtnprint  { background-position: -88px -32px }
+
+      #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+      #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+      #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+      #callout-table a {text-decoration: none; color: blue;}
+      #callout-table a:visited {text-decoration: none; color: blue;}
+      #overview-table a {text-decoration: none; color: black;}
+      #overview-table a:visited {text-decoration: none; color: black;}
+      #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}       
+      p.help-url { margin: 20px 0 5px 0; text-align: center; font-size: 80%; text-decoration: none }      
+      #switchtoggles { text-align: right; padding: 0 2px 0 0; font-size: 90%; } 
+      .sync-toc { color: #157fcc; font-size: 8pt; font-weight: bold; display: none; }
+      .sync-toc a { color: #157fcc; text-decoration: none; font-weight: bold;}
+      .sync-toc a:visited { color: #157fcc; }
+      .sync-toc a:hover { text-decoration: underline; }
+      a.hmanchor { display: inline-block; margin-top: -4em; padding-top: 4em }	  
+   </style>
+   <style TYPE="text/css" media="print">
+      div#idheader, img.dropdown-toggle-icon, p.help-url { display:none } 
+   </style>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <script type="text/javascript">
+     HMSyncTOC("index.html", "gemstone---linux-service-suppo.html");
+   </script>
+   <script type="text/javascript" src="highlight.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){highlight();});
+   </script>
+</head>
+<body>
+
+
+<div id="printheader"><h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Gemstone - Linux-Service Support</span></h1>
+</div>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left; vertical-align:bottom">
+      <p class="sync-toc">&lt;&lt; <a rel="nofollow" href="index.html?gemstone---linux-service-suppo.html" target="_top">Click to Display Table of Contents</a> &gt;&gt;</p>
+      <p class="crumbs"><b>Navigation:</b>&nbsp;
+      
+      <a href="datenbank---gemsdtone_s.html">Gemstone/S - Datenbank</a>&nbsp;&gt;</p>
+   
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Gemstone - Linux-Service Support</span></h1>
+
+    </td>
+    <td class="topichead" id="idnav">
+      
+      <a href="gemstone---eine-lizenzfrage.html" title="Previous Topic"><span class="hmbtnprev"></span></a>
+      <a href="datenbank---gemsdtone_s.html" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="gemstone---crontabs.html" title="Next Topic"><span class="hmbtnnext"></span></a>
+      
+    </td>
+  </tr>  
+</table>
+</div>
+</div>  
+
+<div id="idcontent"><div id="innerdiv">
+<!-- Ask Internet Explorer 6.users to update their obsolete and dangerous browser --> 
+<!--[if lt IE 7]><div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
+
+<!--ZOOMRESTART-->
+<h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">Start-/Stopskripte</span></h2>
+<p class="p_Normal">Zum Starten und Stoppen einer PAS Anwendung als Service muß man aus dem Checkout des GsDevKit_stones im Unterverzeichnis &quot;pas-app-templates&quot; die Skripte &quot;<span class="f_BodyText">pas_start_stone_app.sh&quot;</span> und &quot;<span class="f_BodyText">pas_stop_stone_app.sh&quot; kopieren und anpassen und in das unix-scripts Verzeichnis der Anwendung kopieren.</span></p>
+<h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">pas_start_stone_app.sh</span></h2>
+<p class="p_BodyText"><span class="f_BodyText">Dieses Skript startet die gesamte Anwendung. Die notwendigen Informationen werden aus der Datei &quot;credentials.sh&quot; im &quot;unix-scripts&quot; der Anwendung entnommen. Diese muss vollständig konfiguriert sein</span></p>
+<h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">pas_stop_stone_app.sh</span></h2>
+<p class="p_BodyText"><span class="f_BodyText">Dieses Skript stoppt die gesamte Anwendung. Die notwendigen Informationen werden aus der Datei &quot;credentials.sh&quot; &nbsp;im &quot;unix-scripts&quot; der Anwendung entnommen. Diese muss vollständig konfiguriert sein</span></p>
+<h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">Linux System Start-/Stopskripte</span></h2>
+<p class="p_BodyText"><span class="f_BodyText">Basierend auf den beiden obigen Skripten arbeiten die service-Skripte für die Anwendung unter Linux, damit die Anwendung als service gestartet - und auch entsprechend heruntergefahren werden kann.</span></p>
+<p class="p_BodyText"><span class="f_BodyText">Mit der installierten Runtime (pas/git/GsDevKit_stones) auf dem Server gibt es Templates (Unterverzeichnis &quot;services&quot;) für ein Systemstartskript unter Linux. </span></p>
+<p class="p_BodyText"><span class="f_BodyText">Dabei gibt es zwei Versionen der Skripte</span></p>
+<p class="p_BodyText" style="text-indent: 0; padding-left: 13px; margin-left: 0;"><span class="f_BodyText" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#8226;</span><span class="f_BodyText">gemstone_all - &nbsp;Ein Skript, wenn die zusätzlichen Dienste (PostgreSQL und RabbitMQ) auf </span><strong class="f_BodyText" style="font-weight: bold;">dem gleichen</strong><span class="f_BodyText"> Rechner gestartet werden. Dann wird die Anwendung erst gestartet, wenn PostgreSQL und RabbitMQ bereits gestartet sind.</span></p>
+<p class="p_BodyText" style="text-indent: 0; padding-left: 13px; margin-left: 0;"><span class="f_BodyText" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#8226;</span><span class="f_BodyText">gemstone - Ein Skript, wenn die zusätzlichen Dienste (PostgreSQL und RabbitMQ) auf </span><strong class="f_BodyText" style="font-weight: bold;">einem anderen</strong><span class="f_BodyText"> Rechner gestartet werden.</span></p>
+<p class="p_BodyText"><span class="f_BodyText">Eines dieser Skripte kopiert man nach &quot;/etc/init.d&quot; als &quot;service-name&quot; und man beachte, daß die Datei Ausführungsrechte besitzt, den korrekten Benutzername definiert und auch im richtigen Verzeichnis die beiden Skripte &quot;pas_start_stone.sh&quot; bzw. &quot;pas_stop_stone_app.sh&quot; aufruft.</span></p>
+<p class="p_BodyText"><span class="f_BodyText">Um die Skripte in die Ablaufpfade von Linux einzuführen, muß man den folgenden Befehl durchführen:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">sudo&nbsp;systemctl&nbsp;enable&nbsp;&lt;service-name&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">Danach kann man das System starten:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">sudo&nbsp;systemctl&nbsp;&lt;service-name&gt;&nbsp;start)</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">oder stoppen </span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">sudo&nbsp;systemctl&nbsp;&lt;service-name&gt;&nbsp;stop</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">Beispiel</span></h2>
+<p class="p_Normal">Im folgenden wird ein Skript gezeigt. Daraus kann man die allgemeine Funktionsweise erkennen</p>
+<p class="p_Normal">&nbsp;</p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">#!/bin/bash</span><br />
+<span class="f_CodeExample">###&nbsp;BEGIN&nbsp;INIT&nbsp;INFO</span><br />
+<span class="f_CodeExample">#&nbsp;Required-Start:&nbsp;&nbsp;&nbsp;&nbsp;$local_fs&nbsp;$network&nbsp;$syslog&nbsp;$time</span><br />
+<span class="f_CodeExample">#&nbsp;Required-Stop:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$local_fs</span><br />
+<span class="f_CodeExample">#&nbsp;Provides:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gs_app_name</span><br />
+<span class="f_CodeExample">#&nbsp;Default-Start:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2</span><br />
+<span class="f_CodeExample">#&nbsp;Default-Stop:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;6</span><br />
+<span class="f_CodeExample">#&nbsp;Description:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shutdown&nbsp;or&nbsp;Reboot&nbsp;a&nbsp;Gemstone&nbsp;based&nbsp;application</span><br />
+<span class="f_CodeExample">###&nbsp;END&nbsp;INIT&nbsp;INFO</span><br />
+<span class="f_CodeExample">&nbsp;</span><br />
+<span class="f_CodeExample">#</span><br />
+<span class="f_CodeExample">#&nbsp;Copy&nbsp;this&nbsp;script&nbsp;into&nbsp;/etc/init.d&nbsp;and&nbsp;use&nbsp;it&nbsp;as&nbsp;template&nbsp;for&nbsp;starting&nbsp;the&nbsp;service</span><br />
+<span class="f_CodeExample">#</span><br />
+<span class="f_CodeExample">#&nbsp;systemctl&nbsp;enable&nbsp;gs_app_name</span><br />
+<span class="f_CodeExample">#</span><br />
+<span class="f_CodeExample">#&nbsp;will&nbsp;enable&nbsp;the&nbsp;service.&nbsp;It&nbsp;needs&nbsp;a&nbsp;remote&nbsp;PopstgreSQL&nbsp;database&nbsp;and&nbsp;a&nbsp;remote&nbsp;RabbitMQ&nbsp;Server</span><br />
+<span class="f_CodeExample">#</span><br />
+<span class="f_CodeExample">&nbsp;</span><br />
+<span class="f_CodeExample">#</span><br />
+<span class="f_CodeExample">#&nbsp;The&nbsp;user&nbsp;the&nbsp;application&nbsp;is&nbsp;running&nbsp;under&nbsp;...</span><br />
+<span class="f_CodeExample">#</span><br />
+<span class="f_CodeExample">export&nbsp;GS_APP_USER=&lt;name&gt;</span><br />
+<span class="f_CodeExample">&nbsp;</span><br />
+<span class="f_CodeExample">case&nbsp;&quot;$1&quot;&nbsp;in</span><br />
+<span class="f_CodeExample">&nbsp;&nbsp;&nbsp;start)</span><br />
+<span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sudo&nbsp;-u&nbsp;$GS_APP_USER&nbsp;--&nbsp;bash&nbsp;-i&nbsp;-c&nbsp;'cd&nbsp;${HOME}/&lt;project-folder&gt;/unix-scripts&nbsp;;&nbsp;./pas_start_stone_app.sh'</span><br />
+<span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;;</span><br />
+<span class="f_CodeExample">&nbsp;&nbsp;&nbsp;stop)</span><br />
+<span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sudo&nbsp;-u&nbsp;$GS_APP_USER&nbsp;--&nbsp;bash&nbsp;-i&nbsp;-c&nbsp;'cd&nbsp;${HOME}/&lt;project-folder&gt;/unix-scripts&nbsp;;&nbsp;./pas_stop_stone_app.sh'</span><br />
+<span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;;</span><br />
+<span class="f_CodeExample">&nbsp;&nbsp;&nbsp;*)</span><br />
+<span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;&quot;Usage:&nbsp;$0&nbsp;{start|stop}&quot;</span><br />
+<span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exit&nbsp;1</span><br />
+<span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;;</span><br />
+<span class="f_CodeExample">esac</span><br />
+<span class="f_CodeExample">&nbsp;</span><br />
+<span class="f_CodeExample">exit&nbsp;0</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_Normal">&nbsp;</p>
+<h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">Hinweise</span></h2>
+<p class="p_Normal" style="text-indent: 0; padding-left: 13px; margin-left: 0;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#8226;</span>Man muß folgendes berücksichtigen: Die service-Skripte starten die Anwendung als normaler Benutzer und so sollte es sein. In den Linux System Start-/Stop Skripte wird extra der Benutzer gewechselt (von root zum normalen Benutzer), damit die eigentlichen Skripte korrekt durchgeführt werden. Wenn man das nicht machen würde, dann können spätere Tasks (z.B. cronjobs) sich nicht mit der Datenbank verbinden, weil der Versuch zurückgewiesen wird, den SharedMemory zu nutzen: &quot;access denied&quot;.</p>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript">
+
+
+
+  $(document).ready(function(){
+    $(window).bind('resize', function() {
+      var y = $('#idheader').height(); 
+      $('#idcontent').css('margin-top', y);
+      var par = window.parent;
+      if ($( par ).width() <= $( window ).width()+20) {
+        $('#idheader').css('position', 'relative');
+        $('#idcontent').css('margin-top', 0);
+        $('#idbacktotop').css('display', 'block');
+        $('.hmanchor').css('margin-top', -20);
+	$('.hmanchor').css('padding-top', 20);
+      }
+      else {
+        $('#idheader').css('position', 'fixed');
+        $('#idcontent').css('margin-top', $('#idheader').height());
+        $('#idbacktotop').css('display', 'none');
+        $('.hmanchor').css('margin-top', -y-20);
+	$('.hmanchor').css('padding-top', y+20);
+      }
+    });
+    
+    $(window).resize(); //trigger event for initially small displays
+  });
+
+if ((!parent.hmNavigationFrame) && (parent.location) && (parent.location.href)) { $('.sync-toc').show();$('p.crumbs').hide();}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,261 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <title>Linux - Ubuntu 24.04 &gt; KVM - Gemstone &quot;Carrier&quot; &gt; Vorbereitungen &gt; Beispiel - &quot;user-data.tpl&quot;</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta name="description" content="Konfiguration der einzelnen Maschine &nbsp;Hier ein Beispiel aus dem mitgelieferten Template. So wird eine Maschine konfiguriert. Neben Java, .Net Runtime werden vor allem die..." />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <link type="text/css" href="custom.css" rel="stylesheet" />
+
+   <style TYPE="text/css" media="screen"> 
+      html, body { margin:0; 
+        padding:0; 
+        background: #ffffff; 
+      } 
+      div#printheader { display: none; }
+      #idheader { 
+        width:100%; 
+        height:auto; 
+        padding: 0; 
+        margin: 0;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+      } 
+      /* The "min-height" for "#idheader table" ensures that the (blue) header of the topic
+         has at least the same height as the header of the navigation panel left of it */
+      #idheader table { background: #f5f5f5; min-height: 59px }             
+      #idheader h1 span { color: #157fcc }     
+      #idnav {
+        text-align: right;
+        width: 126px;
+        vertical-align: middle;        
+      } 
+      #idnav a { text-decoration: none }
+      #idnav span {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-left: 4px;
+        background:url('hm_webhelp_buttons_grey.png') top left no-repeat;
+      } 
+      #idnav a span {
+        background-image:url('hm_webhelp_buttons_blue.png');
+      } 
+      #idnav a span:hover {
+        background-image:url('hm_webhelp_buttons_orange.png');
+      } 
+      #idnav span.hmbtnprev { background-position: 0 -32px }
+      #idnav span.hmbtnnext { background-position: -24px -32px }
+      #idnav span.hmbtntop  { background-position: -48px -32px }
+      #idnav span.hmbtntoggle  { width: 20px; background-position: -70px -32px }
+      #idnav span.hmbtnprint  { background-position: -88px -32px }
+
+      #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+      #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+      #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+      #callout-table a {text-decoration: none; color: blue;}
+      #callout-table a:visited {text-decoration: none; color: blue;}
+      #overview-table a {text-decoration: none; color: black;}
+      #overview-table a:visited {text-decoration: none; color: black;}
+      #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}       
+      p.help-url { margin: 20px 0 5px 0; text-align: center; font-size: 80%; text-decoration: none }      
+      #switchtoggles { text-align: right; padding: 0 2px 0 0; font-size: 90%; } 
+      .sync-toc { color: #157fcc; font-size: 8pt; font-weight: bold; display: none; }
+      .sync-toc a { color: #157fcc; text-decoration: none; font-weight: bold;}
+      .sync-toc a:visited { color: #157fcc; }
+      .sync-toc a:hover { text-decoration: underline; }
+      a.hmanchor { display: inline-block; margin-top: -4em; padding-top: 4em }	  
+   </style>
+   <style TYPE="text/css" media="print">
+      div#idheader, img.dropdown-toggle-icon, p.help-url { display:none } 
+   </style>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <script type="text/javascript">
+     HMSyncTOC("index.html", "beispiel-user-data.html");
+   </script>
+   <script type="text/javascript" src="highlight.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){highlight();});
+   </script>
+</head>
+<body>
+
+
+<div id="printheader"><h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Beispiel - &quot;user-data.tpl&quot;</span></h1>
+</div>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left; vertical-align:bottom">
+      <p class="sync-toc">&lt;&lt; <a rel="nofollow" href="index.html?beispiel-user-data.html" target="_top">Click to Display Table of Contents</a> &gt;&gt;</p>
+      <p class="crumbs"><b>Navigation:</b>&nbsp;
+      
+      <a href="linux---ubuntu-24_04.html">Linux - Ubuntu 24.04</a> &gt; <a href="kvm.html">KVM - Gemstone &quot;Carrier&quot;</a> &gt; <a href="vorbereitungen.html">Vorbereitungen</a>&nbsp;&gt;</p>
+   
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Beispiel - &quot;user-data.tpl&quot;</span></h1>
+
+    </td>
+    <td class="topichead" id="idnav">
+      
+      <a href="vm-clients---betriebssysteme.html" title="Previous Topic"><span class="hmbtnprev"></span></a>
+      <a href="vorbereitungen.html" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="beispiel---pas-gemstone_xml.html" title="Next Topic"><span class="hmbtnnext"></span></a>
+      
+    </td>
+  </tr>  
+</table>
+</div>
+</div>  
+
+<div id="idcontent"><div id="innerdiv">
+<!-- Ask Internet Explorer 6.users to update their obsolete and dangerous browser --> 
+<!--[if lt IE 7]><div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
+
+<!--ZOOMRESTART-->
+<h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">Konfiguration der einzelnen Maschine </span></h2>
+<p class="p_BodyText"><span class="f_BodyText">Hier ein Beispiel aus dem mitgelieferten Template. So wird eine Maschine </span><strong class="f_BodyText" style="font-weight: bold;">konfiguriert</strong><span class="f_BodyText">. Neben Java, .Net Runtime werden vor allem die Dateisysteme des HOSTS an bestimmten Stellen eingebunden bzw. die Installation so abgeändert, das Daten im externen Dateisystem abgelegt werden. In diesem Beispiel werden alle Datenbank-Dateien der stones ins HOST-Dateisystem geschrieben. Die zweite Einbindung dient dazu, um externe Daten der VM zur Verfügung zu stellen. Das als exemplarische Nutzung der Möglichkeiten.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">#cloud-config</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">hostname:&nbsp;${VM_NAME}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">fqdn:&nbsp;${VM_NAME}.local</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">package_update:&nbsp;true</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">package_upgrade:&nbsp;true</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">#&nbsp;Temporaeres&nbsp;Root-Passwort&nbsp;fuer&nbsp;Debugging&nbsp;(danach&nbsp;aendern!)</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">chpasswd:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;list:&nbsp;|</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;root:TempPass123!</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;expire:&nbsp;false</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">users:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;-&nbsp;name:&nbsp;pas</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;gecos:&nbsp;Allgemeiner&nbsp;Benutzer&nbsp;zur&nbsp;Verwaltung&nbsp;der&nbsp;GemStone/S&nbsp;Anwendung</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;groups:&nbsp;sudo</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;sudo:&nbsp;ALL=(ALL)&nbsp;NOPASSWD:ALL</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;shell:&nbsp;/bin/bash</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;lock_passwd:&nbsp;false</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;passwd:&nbsp;$6$GMWhV831t/TRbUcb$h456/wEvGlr2E3TpEuk/ChIlaItrlF8GXlEO3zB5690euK7PnHH3gIQgWJbiQXjP1LkvKA2F3OFohJBRlqlwE0</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;ssh_authorized_keys:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ssh-ed25519&nbsp;AAAAC3NzaC1lZDI1NTE5AAAAIO5GzyIsgaUapbyzHj/pUeuYzGDDf+0wqIgCy6qIwvn1&nbsp;m@feldtmann.online</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">packages:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;-&nbsp;subversion</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;-&nbsp;git</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;-&nbsp;curl</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;-&nbsp;wget</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;-&nbsp;ufw</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;-&nbsp;qrencode</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;-&nbsp;qemu-guest-agent</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;-&nbsp;libpq-dev</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;-&nbsp;librabbitmq-dev</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;-&nbsp;openjdk-21-jre-headless</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;-&nbsp;ansible</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;-&nbsp;virtiofsd</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">runcmd:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;-&nbsp;sed&nbsp;-i&nbsp;'s/^#&nbsp;*\(de_DE.UTF-8&nbsp;UTF-8\)/\1/'&nbsp;/etc/locale.gen</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;-&nbsp;grep&nbsp;-q&nbsp;'^de_DE.UTF-8&nbsp;UTF-8'&nbsp;/etc/locale.gen&nbsp;||&nbsp;echo&nbsp;'de_DE.UTF-8&nbsp;UTF-8'&nbsp;&gt;&gt;&nbsp;/etc/locale.gen</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;-&nbsp;locale-gen</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;-&nbsp;update-locale&nbsp;LANG=de_DE.UTF-8&nbsp;LC_ALL=de_DE.UTF-8</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;-&nbsp;systemctl&nbsp;enable&nbsp;--now&nbsp;qemu-guest-agent</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;#&nbsp;VirtIO&nbsp;FS&nbsp;konfigurieren</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;-&nbsp;mkdir&nbsp;-p&nbsp;/mnt/host_db_data</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;-&nbsp;mount&nbsp;-t&nbsp;virtiofs&nbsp;db_data&nbsp;/mnt/host_db_data&nbsp;||&nbsp;true</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;-&nbsp;echo&nbsp;&quot;db_data&nbsp;/mnt/host_db_data&nbsp;virtiofs&nbsp;rw,nofail&nbsp;0&nbsp;0&quot;&nbsp;&gt;&gt;&nbsp;/etc/fstab</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;-&nbsp;mkdir&nbsp;-p&nbsp;/mnt/esv5</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;-&nbsp;mount&nbsp;-t&nbsp;virtiofs&nbsp;esv5&nbsp;/mnt/esv5&nbsp;||&nbsp;true</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;-&nbsp;echo&nbsp;&quot;esv5&nbsp;/mnt/esv5&nbsp;virtiofs&nbsp;rw,nofail&nbsp;0&nbsp;0&quot;&nbsp;&gt;&gt;&nbsp;/etc/fstab</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;#&nbsp;Den&nbsp;Nutzer&nbsp;pas&nbsp;ls&nbsp;linger&nbsp;setzen</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;-&nbsp;loginctl&nbsp;enable-linger&nbsp;pas</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;#&nbsp;Firewall</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;-&nbsp;ufw&nbsp;--force&nbsp;disable</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;#&nbsp;Installationsskript&nbsp;holen&nbsp;und&nbsp;ausfuehren</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;-&nbsp;su&nbsp;-&nbsp;pas&nbsp;-c&nbsp;&quot;wget&nbsp;-O&nbsp;/home/pas/pas_install_env.sh&nbsp;https://feldtmann.ddns.net/pas-project/pas_install_env.sh&quot;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;-&nbsp;su&nbsp;-&nbsp;pas&nbsp;-c&nbsp;&quot;chmod&nbsp;+x&nbsp;/home/pas/pas_install_env.sh&quot;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;-&nbsp;su&nbsp;-&nbsp;pas&nbsp;-c&nbsp;&quot;cd&nbsp;/home/pas&nbsp;&amp;&amp;&nbsp;./pas_install_env.sh&quot;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;#&nbsp;Installation&nbsp;von&nbsp;Zusatzpaketen</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;-&nbsp;su&nbsp;-&nbsp;pas&nbsp;-c&nbsp;&quot;git&nbsp;clone&nbsp;https://github.com/feldti/GemConnect-for-Postgres.git&quot;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;-&nbsp;su&nbsp;-&nbsp;pas&nbsp;-c&nbsp;&quot;git&nbsp;clone&nbsp;https://github.com/feldti/GemConnectForRabbitMQ.git&quot;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;-&nbsp;su&nbsp;-&nbsp;pas&nbsp;-c&nbsp;&quot;git&nbsp;clone&nbsp;https://github.com/feldti/PDFtalk-for-Gemstone.git&quot;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;#&nbsp;Wir&nbsp;verlegen&nbsp;einige&nbsp;Strukturen&nbsp;in&nbsp;das&nbsp;shared&nbsp;filesystem:&nbsp;stones&nbsp;und&nbsp;lizenzen</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;-&nbsp;su&nbsp;-&nbsp;pas&nbsp;-c&nbsp;&quot;rmdir&nbsp;&nbsp;/home/pas/pas/work/stones&quot;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;-&nbsp;su&nbsp;-&nbsp;pas&nbsp;-c&nbsp;&quot;rmdir&nbsp;&nbsp;/home/pas/pas/work/licenses&quot;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;-&nbsp;su&nbsp;-&nbsp;pas&nbsp;-c&nbsp;&quot;mkdir&nbsp;/mnt/host_db_data/stones&quot;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;-&nbsp;su&nbsp;-&nbsp;pas&nbsp;-c&nbsp;&quot;mkdir&nbsp;/mnt/host_db_data/licenses&quot;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;-&nbsp;su&nbsp;-&nbsp;pas&nbsp;-c&nbsp;&quot;ln&nbsp;-s&nbsp;/mnt/host_db_data/stones&nbsp;/home/pas/pas/work/stones&quot;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;-&nbsp;su&nbsp;-&nbsp;pas&nbsp;-c&nbsp;&quot;ln&nbsp;-s&nbsp;/mnt/host_db_data/licenses&nbsp;/home/pas/pas/work/licenses&quot;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;#&nbsp;Entwicklungsroutinen&nbsp;für&nbsp;.NetCore</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;-&nbsp;|</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;/etc/os-release</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;&quot;${ID}&quot;&nbsp;in</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;debian)</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wget&nbsp;https://packages.microsoft.com/config/debian/${VERSION_ID}/packages-microsoft-prod.deb&nbsp;-O&nbsp;/tmp/ms-prod.deb</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dpkg&nbsp;-i&nbsp;/tmp/ms-prod.deb</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ubuntu)</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wget&nbsp;https://packages.microsoft.com/config/ubuntu/${VERSION_ID}/packages-microsoft-prod.deb&nbsp;-O&nbsp;/tmp/ms-prod.deb</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dpkg&nbsp;-i&nbsp;/tmp/ms-prod.deb</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*)</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;&quot;Unbekannte&nbsp;Distribution:&nbsp;${ID}&quot;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exit&nbsp;1</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;esac</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;-&nbsp;apt&nbsp;update</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;-&nbsp;apt&nbsp;install&nbsp;-y&nbsp;aspnetcore-runtime-8.0</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;-&nbsp;apt&nbsp;install&nbsp;-y&nbsp;aspnetcore-runtime-10.0</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;#&nbsp;Shared&nbsp;Memory&nbsp;auf&nbsp;2GB&nbsp;für&nbsp;die&nbsp;kleinen&nbsp;Lizenzen&nbsp;setzen</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;-&nbsp;echo&nbsp;'kernel.shmmax&nbsp;=&nbsp;2147483648'&nbsp;&gt;&gt;&nbsp;/etc/sysctl.conf</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;-&nbsp;echo&nbsp;'kernel.shmall&nbsp;=&nbsp;524288'&nbsp;&gt;&gt;&nbsp;/etc/sysctl.conf</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;-&nbsp;sysctl&nbsp;-p</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript">
+
+
+
+  $(document).ready(function(){
+    $(window).bind('resize', function() {
+      var y = $('#idheader').height(); 
+      $('#idcontent').css('margin-top', y);
+      var par = window.parent;
+      if ($( par ).width() <= $( window ).width()+20) {
+        $('#idheader').css('position', 'relative');
+        $('#idcontent').css('margin-top', 0);
+        $('#idbacktotop').css('display', 'block');
+        $('.hmanchor').css('margin-top', -20);
+	$('.hmanchor').css('padding-top', 20);
+      }
+      else {
+        $('#idheader').css('position', 'fixed');
+        $('#idcontent').css('margin-top', $('#idheader').height());
+        $('#idbacktotop').css('display', 'none');
+        $('.hmanchor').css('margin-top', -y-20);
+	$('.hmanchor').css('padding-top', y+20);
+      }
+    });
+    
+    $(window).resize(); //trigger event for initially small displays
+  });
+
+if ((!parent.hmNavigationFrame) && (parent.location) && (parent.location.href)) { $('.sync-toc').show();$('p.crumbs').hide();}
+
+</script>
+</body>
+</html>

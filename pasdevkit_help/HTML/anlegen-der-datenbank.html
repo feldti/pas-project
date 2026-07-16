@@ -1,0 +1,236 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <title>PASLOG-Viewer - Anwendungsbeispiel &gt; Anlegen der Datenbank</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta name="description" content="Entwicklungsdatenbank anlegen Zuerst einmal machen wir die Gemstone/S Seite fertig. Wir brauchen eine Datebank, in der wir entwickeln. Registry für Entwicklung mit..." />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <link type="text/css" href="custom.css" rel="stylesheet" />
+
+   <style TYPE="text/css" media="screen"> 
+      html, body { margin:0; 
+        padding:0; 
+        background: #ffffff; 
+      } 
+      div#printheader { display: none; }
+      #idheader { 
+        width:100%; 
+        height:auto; 
+        padding: 0; 
+        margin: 0;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+      } 
+      /* The "min-height" for "#idheader table" ensures that the (blue) header of the topic
+         has at least the same height as the header of the navigation panel left of it */
+      #idheader table { background: #f5f5f5; min-height: 59px }             
+      #idheader h1 span { color: #157fcc }     
+      #idnav {
+        text-align: right;
+        width: 126px;
+        vertical-align: middle;        
+      } 
+      #idnav a { text-decoration: none }
+      #idnav span {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-left: 4px;
+        background:url('hm_webhelp_buttons_grey.png') top left no-repeat;
+      } 
+      #idnav a span {
+        background-image:url('hm_webhelp_buttons_blue.png');
+      } 
+      #idnav a span:hover {
+        background-image:url('hm_webhelp_buttons_orange.png');
+      } 
+      #idnav span.hmbtnprev { background-position: 0 -32px }
+      #idnav span.hmbtnnext { background-position: -24px -32px }
+      #idnav span.hmbtntop  { background-position: -48px -32px }
+      #idnav span.hmbtntoggle  { width: 20px; background-position: -70px -32px }
+      #idnav span.hmbtnprint  { background-position: -88px -32px }
+
+      #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+      #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+      #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+      #callout-table a {text-decoration: none; color: blue;}
+      #callout-table a:visited {text-decoration: none; color: blue;}
+      #overview-table a {text-decoration: none; color: black;}
+      #overview-table a:visited {text-decoration: none; color: black;}
+      #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}       
+      p.help-url { margin: 20px 0 5px 0; text-align: center; font-size: 80%; text-decoration: none }      
+      #switchtoggles { text-align: right; padding: 0 2px 0 0; font-size: 90%; } 
+      .sync-toc { color: #157fcc; font-size: 8pt; font-weight: bold; display: none; }
+      .sync-toc a { color: #157fcc; text-decoration: none; font-weight: bold;}
+      .sync-toc a:visited { color: #157fcc; }
+      .sync-toc a:hover { text-decoration: underline; }
+      a.hmanchor { display: inline-block; margin-top: -4em; padding-top: 4em }	  
+   </style>
+   <style TYPE="text/css" media="print">
+      div#idheader, img.dropdown-toggle-icon, p.help-url { display:none } 
+   </style>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <script type="text/javascript">
+     HMSyncTOC("index.html", "anlegen-der-datenbank.html");
+   </script>
+   <script type="text/javascript" src="highlight.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){highlight();});
+   </script>
+</head>
+<body>
+
+
+<div id="printheader"><h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Anlegen der Datenbank</span></h1>
+</div>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left; vertical-align:bottom">
+      <p class="sync-toc">&lt;&lt; <a rel="nofollow" href="index.html?anlegen-der-datenbank.html" target="_top">Click to Display Table of Contents</a> &gt;&gt;</p>
+      <p class="crumbs"><b>Navigation:</b>&nbsp;
+      
+      <a href="paslog-viewer---anwendungsbeis.html">PASLOG-Viewer - Anwendungsbeispiel</a>&nbsp;&gt;</p>
+   
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Anlegen der Datenbank</span></h1>
+
+    </td>
+    <td class="topichead" id="idnav">
+      
+      <a href="paslog-viewer---anwendungsbeis.html" title="Previous Topic"><span class="hmbtnprev"></span></a>
+      <a href="paslog-viewer---anwendungsbeis.html" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="ein-modell-muss-her-___.html" title="Next Topic"><span class="hmbtnnext"></span></a>
+      
+    </td>
+  </tr>  
+</table>
+</div>
+</div>  
+
+<div id="idcontent"><div id="innerdiv">
+<!-- Ask Internet Explorer 6.users to update their obsolete and dangerous browser --> 
+<!--[if lt IE 7]><div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
+
+<!--ZOOMRESTART-->
+<h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">Entwicklungsdatenbank anlegen</span></h2>
+<p class="p_BodyText"><span class="f_BodyText">Zuerst einmal machen wir die Gemstone/S Seite fertig. Wir brauchen eine Datebank, in der wir entwickeln.</span></p>
+<h3 class="p_Heading3" style="page-break-after: avoid;"><span class="f_Heading3">Registry für Entwicklung mit Standard-Lizenz anlegen</span></h3>
+<p class="p_Normal">Wir legen eine eigene Registry an für Projekte, die mit der Standard Lizenz laufen sollen. Das bedeutet auch die kleine Datenbankgröße und auch die geringste Anzahl an möglichen Prozessen. Diese Registry nennen wir &quot;standard&quot; (Name ist inhaltlich nicht wichtig).</p>
+<p class="p_Normal">&nbsp;</p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">pas_create_registry.sh&nbsp;standard</span><br />
+<span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_Normal">&nbsp;</p>
+<h3 class="p_Heading3" style="page-break-after: avoid;"><span class="f_Heading3">Datenbank anlegen für die Entwicklung</span></h3>
+<p class="p_BodyText"><span class="f_BodyText">Danach legen wir eine Datenbank mit der Gemstone-Version 3.7.5 an für die PAS-Entwicklung an. Dabei wird die Standard-Datenbank mit Seaside herunter geladen (inklusive der Standard-Lizenz) und in diese Version werden dann noch alle notwendigen Komponenten geladen, die PAS ausmachen:</span></p>
+<p class="p_BodyText" style="text-indent: 0; padding-left: 13px; margin-left: 0;"><span class="f_BodyText" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#8226;</span><span class="f_BodyText">PostgreSQL Connector (PostgreSQL ist bereits komplett lokal installiert)</span></p>
+<p class="p_BodyText" style="text-indent: 0; padding-left: 13px; margin-left: 0;"><span class="f_BodyText" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#8226;</span><span class="f_BodyText">RabbitMQ Connector (RabbitMQ ist bereits komplett lokal installiert)</span></p>
+<p class="p_BodyText" style="text-indent: 0; padding-left: 13px; margin-left: 0;"><span class="f_BodyText" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#8226;</span><span class="f_BodyText">Report4PDF von Christian Haider</span></p>
+<p class="p_BodyText" style="text-indent: 0; padding-left: 13px; margin-left: 0;"><span class="f_BodyText" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#8226;</span><span class="f_BodyText">und einige wenige Smalltalk-Bibliotheken für die Entwicklung</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">pas_create_pas_stone.sh&nbsp;paslogviewer&nbsp;standard&nbsp;3.7.5&nbsp;v100</span><br />
+<span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_BodyText" style="text-indent: 0; padding-left: 13px; margin-left: 0;"><span class="f_BodyText" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#8226;</span><span class="f_BodyText">Die &quot;v100&quot; definiert die Version &quot;v100&quot; von PAS. Das ist die neueste Version. </span></p>
+<p class="p_BodyText" style="text-indent: 0; padding-left: 13px; margin-left: 0;"><span class="f_BodyText" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#8226;</span><span class="f_BodyText">&quot;3.7.5&quot; bedeutet die Produktversion von Gemstone/S. Das System lädt die Daten von entsprechenden Repositories im Internet herunter. Woher kann man am besten immer in dem Skript herausfinden.</span></p>
+<h3 class="p_Heading3" style="page-break-after: avoid;"><span class="f_Heading3">Überprüfen</span></h3>
+<p class="p_Normal">Mit</p>
+<p class="p_Normal">&nbsp;</p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">mf@stellaris:~$&nbsp;pas_stones_list.sh&nbsp;|&nbsp;grep&nbsp;standard</span><br />
+<span class="f_CodeExample">Database&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NetLDI&nbsp;Port&nbsp;Version&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Registry&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br />
+<span class="f_CodeExample">--------------------&nbsp;---------------&nbsp;----------&nbsp;---------------&nbsp;-------------------------</span><br />
+<span class="f_CodeExample">paslogviewer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.7.5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;standard</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_Normal">&nbsp;</p>
+<p class="p_BodyText"><span class="f_BodyText">kann man überprüfen, ob die Datenbank angelegt wurde. Der Netldi-Prozess läuft noch nicht, daher kann sich die IDE noch nicht mit der Datenbank verbinden.</span></p>
+<p class="p_BodyText"><span class="f_BodyText">Das typische Prozeßabbild für eine laufende Datenbank sieht so aus:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;41082&nbsp;?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ssl&nbsp;&nbsp;&nbsp;&nbsp;0:01&nbsp;&nbsp;\_&nbsp;/datadisk/pas/standard/products/GemStone64Bit3.7.5-x86_64.Linux/sys/stoned&nbsp;paslogviewer&nbsp;-e&nbsp;/datadisk/pas/standard/stones/paslogviewer/system.conf&nbsp;-z&nbsp;/datadisk/pas/standard/stones/paslogviewer/system.conf&nbsp;-</span><br />
+<span class="f_CodeExample">&nbsp;41084&nbsp;?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sl&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0:00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\_&nbsp;/datadisk/pas/standard/products/GemStone64Bit3.7.5-x86_64.Linux/sys/shrpcmonitor&nbsp;paslogviewer~bb826256099af932&nbsp;65536&nbsp;76&nbsp;1&nbsp;5000&nbsp;7000&nbsp;1&nbsp;1900&nbsp;0&nbsp;432&nbsp;1&nbsp;2&nbsp;60&nbsp;2&nbsp;0</span><br />
+<span class="f_CodeExample">&nbsp;41115&nbsp;?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sl&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0:03&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\_&nbsp;/datadisk/pas/standard/products/GemStone64Bit3.7.5-x86_64.Linux/sys/gem&nbsp;reclaimgcgem&nbsp;paslogviewer&nbsp;1&nbsp;-T&nbsp;5000</span><br />
+<span class="f_CodeExample">&nbsp;41116&nbsp;?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sl&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0:04&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\_&nbsp;/datadisk/pas/standard/products/GemStone64Bit3.7.5-x86_64.Linux/sys/gem&nbsp;symbolgem&nbsp;paslogviewer&nbsp;-T&nbsp;20480</span><br />
+<span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_Normal">&nbsp;</p>
+<h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">Netldi starten für die Entwicklung</span></h2>
+<p class="p_BodyText"><span class="f_BodyText">Nun muß noch der Netldi Prozeß gestartet werden. &nbsp;Das geschieht mittels:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">mf@stellaris:~$&nbsp;startNetldi.solo&nbsp;paslogviewer&nbsp;--registry=standard</span><br />
+<span class="f_CodeExample">&nbsp;</span><br />
+<span class="f_CodeExample">======&nbsp;&nbsp;starting&nbsp;netldi&nbsp;at&nbsp;2026-06-04T04:30:10.915790-07:00</span><br />
+<span class="f_CodeExample">startnetldi[Info]:&nbsp;setting&nbsp;GEMSTONE_NRS_ALL='!#netldi:paslogviewer_ldi'</span><br />
+<span class="f_CodeExample">startnetldi[Info]:&nbsp;GemStone&nbsp;version&nbsp;'3.7.5'</span><br />
+<span class="f_CodeExample">startnetldi[Info]:&nbsp;Starting&nbsp;GemStone&nbsp;network&nbsp;server&nbsp;'paslogviewer_ldi'.</span><br />
+<span class="f_CodeExample">startnetldi[Info]:&nbsp;GEMSTONE&nbsp;is:&nbsp;'/datadisk/pas/standard/products/GemStone64Bit3.7.5-x86_64.Linux'</span><br />
+<span class="f_CodeExample">startnetldi[Info]:&nbsp;Log&nbsp;file&nbsp;is&nbsp;'/datadisk/pas/standard/stones/paslogviewer/logs/netldi.log'.</span><br />
+<span class="f_CodeExample">startnetldi[Info]:&nbsp;GemStone&nbsp;server&nbsp;'paslogviewer_ldi'&nbsp;has&nbsp;been&nbsp;started,&nbsp;process&nbsp;42484</span><br />
+<span class="f_CodeExample">&nbsp;</span><br />
+<span class="f_CodeExample">****************************************</span><br />
+<span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_BodyText"><span style="font-size: 16px; font-family: 'Courier New',Courier,monospace;">Und das ergibt dann ein</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">mf@stellaris:~$&nbsp;pas_stones_list.sh&nbsp;|&nbsp;grep&nbsp;standard</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">Database&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NetLDI&nbsp;Port&nbsp;Version&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Registry&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br />
+<span class="f_CodeExample">--------------------&nbsp;---------------&nbsp;----------&nbsp;---------------&nbsp;-------------------------</span><br />
+<span class="f_CodeExample">paslogviewer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;38507&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.7.5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;standard</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">Das bedeutet, daß die IDE sich über den Port 38507 mit dieser Datenbank verbinden kann.</span></p>
+<h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">putty konfigurieren für die Verbindung zur Datenbank</span></h2>
+<p class="p_BodyText"><span class="f_BodyText">Die IDE läuft in einer virtuellen Maschine unter Wndows. Der Zugriff zur Datenbank ist also immer ein remote Zugriff. Per Default wird der Netldi-Prozeß so gestartet, daß er auf allen Schnittstellen lauscht. Das habe ich in meiner GsDevKit_stones Umgebung komplett unterbunden und das Lauschen nur auf 127.0.0.1 erlaubt. Daher muß immer eine putty-Verbindung definiert werden, um ein Tunneling der Verbindungen zu ermöglichen.</span></p>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+<div class="p_BodyText" style="text-align: center;"><div style="margin:0 auto 0 auto;width:75%;max-width:454px;height:auto;"><img alt="putty-tunneling" style="width:100%;height:auto;border:none" src="putty-tunneling.png"/></div></div>
+<p class="p_BodyText" style="text-align: center;"><span class="f_ImageCaption">putty - Konfiguration</span></p>
+<p class="p_ImageCaption"><span style="width:48px;display:inline-block">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
+<p class="p_BodyText"><span class="f_BodyText">Danach die Einträge in Jade machen. Die richtige Version von Gemstone/S auswählen (3.7.4.x reicht für 3.7.5).</span></p>
+<div class="p_BodyText" style="text-align: center;"><div style="margin:0 auto 0 auto;width:75%;max-width:696px;height:auto;"><img alt="jade-example" style="width:100%;height:auto;border:none" src="jade-example.png"/></div></div>
+<p class="p_BodyText" style="text-align: center;"><span class="f_BodyText">Eintrag der Konfiguration in der IDE</span></p>
+<p class="p_BodyText"><span class="f_BodyText">Danach auf Login klicken, die IDE startet und man bekommt einen Einblick in die Strukturen der Datenbank:</span></p>
+<div class="p_BodyText" style="text-align: center;"><div style="margin:0 auto 0 auto;width:75%;max-width:1276px;height:auto;"><img alt="jade-after-first-login" style="width:100%;height:auto;border:none" src="jade-after-first-login.png"/></div></div>
+<p class="p_BodyText" style="text-align: center;"><span class="f_BodyText">Einblick in die Datenbank nach dem ersten Login</span></p>
+<p class="p_BodyText" style="text-align: center;"><span class="f_BodyText">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">&quot;Einblick in die Datenbank&quot; - das klingt natürlich ziemlich schräg für den normalen Mainstream. In Gemstone gibt es keine Unterscheidung zwischen Code oder Daten. Der oben sichtbare Browser visualisiert also erst einmal nur die Quelltextdaten des vorhandenen Systems. Enthalten sind hier PostgreSQL und RabbitMQ Anbindungen. Erzeugung von PDF Dokumenten, JSON Bearbeitung, http-Requestsbearbeitung - also nahezu alles, was man für ein Framework benötigt.</span></p>
+<p class="p_BodyText"><span class="f_BodyText">Später werden wir dann sehen, wie unser Quelltext für die Anwendung hinzukommt.</span></p>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript">
+
+
+
+  $(document).ready(function(){
+    $(window).bind('resize', function() {
+      var y = $('#idheader').height(); 
+      $('#idcontent').css('margin-top', y);
+      var par = window.parent;
+      if ($( par ).width() <= $( window ).width()+20) {
+        $('#idheader').css('position', 'relative');
+        $('#idcontent').css('margin-top', 0);
+        $('#idbacktotop').css('display', 'block');
+        $('.hmanchor').css('margin-top', -20);
+	$('.hmanchor').css('padding-top', 20);
+      }
+      else {
+        $('#idheader').css('position', 'fixed');
+        $('#idcontent').css('margin-top', $('#idheader').height());
+        $('#idbacktotop').css('display', 'none');
+        $('.hmanchor').css('margin-top', -y-20);
+	$('.hmanchor').css('padding-top', y+20);
+      }
+    });
+    
+    $(window).resize(); //trigger event for initially small displays
+  });
+
+if ((!parent.hmNavigationFrame) && (parent.location) && (parent.location.href)) { $('.sync-toc').show();$('p.crumbs').hide();}
+
+</script>
+</body>
+</html>

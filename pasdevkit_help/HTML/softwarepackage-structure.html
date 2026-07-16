@@ -1,0 +1,261 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <title>PUM - Modellierung und Codeerzeugung &gt; Strukturen und Muster &gt; SoftwarePackageList Structure</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta name="description" content="Beschreibung Diese Struktur ermöglicht die Abfrage von installierten Software Packages im aktuellen Program. I.d.R. sind Monticello Packages Basis für diese Information, aber..." />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <link type="text/css" href="custom.css" rel="stylesheet" />
+
+   <style TYPE="text/css" media="screen"> 
+      html, body { margin:0; 
+        padding:0; 
+        background: #ffffff; 
+      } 
+      div#printheader { display: none; }
+      #idheader { 
+        width:100%; 
+        height:auto; 
+        padding: 0; 
+        margin: 0;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+      } 
+      /* The "min-height" for "#idheader table" ensures that the (blue) header of the topic
+         has at least the same height as the header of the navigation panel left of it */
+      #idheader table { background: #f5f5f5; min-height: 59px }             
+      #idheader h1 span { color: #157fcc }     
+      #idnav {
+        text-align: right;
+        width: 126px;
+        vertical-align: middle;        
+      } 
+      #idnav a { text-decoration: none }
+      #idnav span {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-left: 4px;
+        background:url('hm_webhelp_buttons_grey.png') top left no-repeat;
+      } 
+      #idnav a span {
+        background-image:url('hm_webhelp_buttons_blue.png');
+      } 
+      #idnav a span:hover {
+        background-image:url('hm_webhelp_buttons_orange.png');
+      } 
+      #idnav span.hmbtnprev { background-position: 0 -32px }
+      #idnav span.hmbtnnext { background-position: -24px -32px }
+      #idnav span.hmbtntop  { background-position: -48px -32px }
+      #idnav span.hmbtntoggle  { width: 20px; background-position: -70px -32px }
+      #idnav span.hmbtnprint  { background-position: -88px -32px }
+
+      #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+      #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+      #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+      #callout-table a {text-decoration: none; color: blue;}
+      #callout-table a:visited {text-decoration: none; color: blue;}
+      #overview-table a {text-decoration: none; color: black;}
+      #overview-table a:visited {text-decoration: none; color: black;}
+      #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}       
+      p.help-url { margin: 20px 0 5px 0; text-align: center; font-size: 80%; text-decoration: none }      
+      #switchtoggles { text-align: right; padding: 0 2px 0 0; font-size: 90%; } 
+      .sync-toc { color: #157fcc; font-size: 8pt; font-weight: bold; display: none; }
+      .sync-toc a { color: #157fcc; text-decoration: none; font-weight: bold;}
+      .sync-toc a:visited { color: #157fcc; }
+      .sync-toc a:hover { text-decoration: underline; }
+      a.hmanchor { display: inline-block; margin-top: -4em; padding-top: 4em }	  
+   </style>
+   <style TYPE="text/css" media="print">
+      div#idheader, img.dropdown-toggle-icon, p.help-url { display:none } 
+   </style>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <script type="text/javascript">
+     HMSyncTOC("index.html", "softwarepackage-structure.html");
+   </script>
+   <script type="text/javascript" src="highlight.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){highlight();});
+   </script>
+</head>
+<body>
+
+
+<div id="printheader"><h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">SoftwarePackageList Structure</span></h1>
+</div>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left; vertical-align:bottom">
+      <p class="sync-toc">&lt;&lt; <a rel="nofollow" href="index.html?softwarepackage-structure.html" target="_top">Click to Display Table of Contents</a> &gt;&gt;</p>
+      <p class="crumbs"><b>Navigation:</b>&nbsp;
+      
+      <a href="pum---modellierung-und-codeerz.html">PUM - Modellierung und Codeerzeugung</a> &gt; <a href="chapter-2.html">Strukturen und Muster</a>&nbsp;&gt;</p>
+   
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">SoftwarePackageList Structure</span></h1>
+
+    </td>
+    <td class="topichead" id="idnav">
+      
+      <a href="simple-project-user-role-struc.html" title="Previous Topic"><span class="hmbtnprev"></span></a>
+      <a href="chapter-2.html" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="licenselist-structure.html" title="Next Topic"><span class="hmbtnnext"></span></a>
+      
+    </td>
+  </tr>  
+</table>
+</div>
+</div>  
+
+<div id="idcontent"><div id="innerdiv">
+<!-- Ask Internet Explorer 6.users to update their obsolete and dangerous browser --> 
+<!--[if lt IE 7]><div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
+
+<!--ZOOMRESTART-->
+<h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">Beschreibung</span></h2>
+<p class="p_BodyText"><span class="f_BodyText">Diese Struktur ermöglicht die Abfrage von installierten Software Packages im aktuellen Program. I.d.R. sind Monticello Packages Basis für diese Information, aber das muß nicht so sein - der Entwickler entscheidet.</span></p>
+<p class="p_BodyText" style="text-indent: 0; padding-left: 13px; margin-left: 0;"><span class="f_BodyText" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#8226;</span><span class="f_BodyText">Name des Software Package</span></p>
+<p class="p_BodyText" style="text-indent: 0; padding-left: 13px; margin-left: 0;"><span class="f_BodyText" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#8226;</span><span class="f_BodyText">Version des Software packages</span></p>
+<p class="p_BodyText"><span class="f_BodyText">Die API-Informationen werden über eine CRUD-Struktur ermittelt - wobei nur der (R)read-Teil zu implementieren ist ...</span></p>
+<h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">Beispielimplementierung</span></h2>
+<p class="p_BodyText"><span class="f_BodyText">Anbei eine Beispielimplementierung des READ-Calls (in Smalltalk):</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><strong class="f_CodeExample" style="font-weight: bold;">apiSystemSoftwarePackageListRead:&nbsp;aTSTAPIPRSoftwarePackageListStore&nbsp;options:&nbsp;aMSKRestCallOptions</strong></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span style="width:48px;display:inline-block">&nbsp;</span><span class="f_CodeExample">|&nbsp;aTSTAPILicenseInfo&nbsp;totalAPISoftwarePackage&nbsp;sortedTotalAPISoftwarePackage&nbsp;selectedAPISoftwarePackage&nbsp;|</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span><span class="f_CodeExample" style="color: #008000;">&nbsp;&quot;</span></p>
+<p class="p_CodeExample"><strong class="f_CodeExample" style="font-style: italic; font-weight: bold; color: #008000;">&nbsp;&nbsp;&nbsp;Der&nbsp;Parameter&nbsp;aTSTAPIPRLicenseListStore&nbsp;wird&nbsp;nicht&nbsp;wirklich&nbsp;benötigt&nbsp;-&nbsp;aber&nbsp;man&nbsp;</strong></p>
+<p class="p_CodeExample"><strong class="f_CodeExample" style="font-style: italic; font-weight: bold; color: #008000;">&nbsp;&nbsp;&nbsp;kann&nbsp;sich&nbsp;vorstellen,&nbsp;den&nbsp;Call&nbsp;später&nbsp;zu&nbsp;parametrisieren.&nbsp;Außerdem&nbsp;benötigt&nbsp;man&nbsp;</strong></p>
+<p class="p_CodeExample"><strong class="f_CodeExample" style="font-style: italic; font-weight: bold; color: #008000;">&nbsp;&nbsp;&nbsp;den&nbsp;Parameter&nbsp;als&nbsp;Paging-Information</strong></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #008000;">&nbsp;&nbsp;&quot;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span style="width:48px;display:inline-block">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;</span><span class="f_CodeExample" style="color: #008000;">&quot;</span></p>
+<p class="p_CodeExample"><strong class="f_CodeExample" style="font-style: italic; font-weight: bold; color: #008000;">&nbsp;&nbsp;&nbsp;Wir&nbsp;checken&nbsp;ggfs.&nbsp;ob&nbsp;der&nbsp;Benutzer&nbsp;den&nbsp;Call&nbsp;überhaupt&nbsp;machen&nbsp;darf&nbsp;...&nbsp;der</strong></p>
+<p class="p_CodeExample"><strong class="f_CodeExample" style="font-style: italic; font-weight: bold; color: #008000;">&nbsp;&nbsp;&nbsp;eigentliche&nbsp;Check&nbsp;muss&nbsp;entsprechend&nbsp;kodiert&nbsp;werden:&nbsp;isAllowedToRetrieveSoftwarePackagesInfo</strong></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #008000;">&nbsp;&nbsp;&quot;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;aMSKRestCallOptions&nbsp;getUser&nbsp;isAllowedToRetrieveSoftwarePackagesInfo</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;ifFalse:[</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><strong class="f_CodeExample" style="font-style: italic; font-weight: bold; color: #008000;">&quot;Wir&nbsp;nutzen&nbsp;die&nbsp;vordefinierte&nbsp;Access&nbsp;Denied&nbsp;Exception</strong><em class="f_CodeExample" style="font-style: italic; color: #008000;">&quot;</em></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TSTEnumErrorDefinition&nbsp;errCodeAccessDeniedThrowSignal:&nbsp;aMSKRestCallOptions&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;].</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;</span><strong class="f_CodeExample" style="font-weight: bold; color: #008000;">&quot;</strong></p>
+<p class="p_CodeExample"><strong class="f_CodeExample" style="font-weight: bold; color: #008000;">&nbsp;&nbsp;&nbsp;</strong><strong class="f_CodeExample" style="font-style: italic; font-weight: bold; color: #008000;">In&nbsp;allen&nbsp;PageRequests&nbsp;gibt&nbsp;es&nbsp;die&nbsp;folgende&nbsp;Reihenfolgen</strong></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><strong class="f_CodeExample" style="font-style: italic; font-weight: bold; color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a)&nbsp;Ermittlung&nbsp;der&nbsp;Komplettmenge</strong></p>
+<p class="p_CodeExample"><strong class="f_CodeExample" style="font-style: italic; font-weight: bold; color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b)&nbsp;Filterung&nbsp;der&nbsp;Komplettmenge</strong></p>
+<p class="p_CodeExample"><strong class="f_CodeExample" style="font-style: italic; font-weight: bold; color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c)&nbsp;Sortierung&nbsp;der&nbsp;Komplettmenge</strong></p>
+<p class="p_CodeExample"><strong class="f_CodeExample" style="font-style: italic; font-weight: bold; color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d)&nbsp;Eventuelles&nbsp;Paging&nbsp;ausführen</strong></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><strong class="f_CodeExample" style="font-style: italic; font-weight: bold; color: #008000;">&nbsp;&nbsp;&nbsp;Dieses&nbsp;Beispiel&nbsp;ist&nbsp;besonders,&nbsp;denn&nbsp;die&nbsp;Rückgabeobjekte&nbsp;werden&nbsp;nicht&nbsp;von&nbsp;persistenten</strong></p>
+<p class="p_CodeExample"><strong class="f_CodeExample" style="font-style: italic; font-weight: bold; color: #008000;">&nbsp;&nbsp;&nbsp;Objekten&nbsp;abgeleitet.&nbsp;Daher&nbsp;entfällt&nbsp;hier&nbsp;das&nbsp;Filtern.&nbsp;Die&nbsp;Sortierung&nbsp;muss&nbsp;manuell</strong></p>
+<p class="p_CodeExample"><strong class="f_CodeExample" style="font-style: italic; font-weight: bold; color: #008000;">&nbsp;&nbsp;&nbsp;vorgenommen&nbsp;werden</strong></p>
+<p class="p_CodeExample"><strong class="f_CodeExample" style="font-weight: bold; color: #008000;">&nbsp;&nbsp;&quot;</strong></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span><span class="f_CodeExample" style="color: #008000;">&nbsp;</span><strong class="f_CodeExample" style="font-weight: bold; color: #008000;">&quot;</strong></p>
+<p class="p_CodeExample"><strong class="f_CodeExample" style="font-weight: bold; color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;</strong><strong class="f_CodeExample" style="font-style: italic; font-weight: bold; color: #008000;">Zuerst&nbsp;die&nbsp;komplette&nbsp;Menge&nbsp;erstellen.&nbsp;Hier&nbsp;wird&nbsp;das&nbsp;manuell&nbsp;zusammengestellt&nbsp;-&nbsp;hier</strong></p>
+<p class="p_CodeExample"><strong class="f_CodeExample" style="font-style: italic; font-weight: bold; color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;könnte&nbsp;man&nbsp;auch&nbsp;die&nbsp;Sortierung&nbsp;direkt&nbsp;mit&nbsp;einbinden&nbsp;...</strong></p>
+<p class="p_CodeExample"><strong class="f_CodeExample" style="font-weight: bold; color: #008000;">&nbsp;&nbsp;&quot;</strong></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;totalAPISoftwarePackage&nbsp;:=&nbsp;OrderedCollection&nbsp;new.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;totalAPISoftwarePackage</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;add:&nbsp;((TSTAPISoftwarePackage&nbsp;newInitialized&nbsp;setAllAttributesToNil)</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setName:&nbsp;'_GessCATIProject'</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setVersion:&nbsp;'GessCATIProject-MSK.1000074078';</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yourself).</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><strong class="f_CodeExample" style="font-weight: bold;">&nbsp;</strong><strong class="f_CodeExample" style="font-weight: bold; color: #008000;">&nbsp;&quot;</strong></p>
+<p class="p_CodeExample"><strong class="f_CodeExample" style="font-weight: bold; color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;</strong><strong class="f_CodeExample" style="font-style: italic; font-weight: bold; color: #008000;">Wir&nbsp;könnten&nbsp;nun&nbsp;noch&nbsp;sortieren&nbsp;...&nbsp;um&nbsp;einheitliche&nbsp;Rückgabelisten&nbsp;zu&nbsp;erzwingen</strong></p>
+<p class="p_CodeExample"><strong class="f_CodeExample" style="font-weight: bold; color: #008000;">&nbsp;&nbsp;&quot;&nbsp;&nbsp;&nbsp;</strong></p>
+<p class="p_CodeExample"><strong class="f_CodeExample" style="font-weight: bold;">&nbsp;&nbsp;</strong><span class="f_CodeExample">sortedTotalAPISoftwarePackage&nbsp;:=&nbsp;SortedCollection&nbsp;sortBlock:&nbsp;[&nbsp;:a&nbsp;:b&nbsp;|&nbsp;a&nbsp;getName&nbsp;&lt;&nbsp;b&nbsp;getName&nbsp;].</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;sortedTotalAPISoftwarePackage&nbsp;addAll:&nbsp;totalAPISoftwarePackage.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><strong class="f_CodeExample" style="font-weight: bold;">&nbsp;&nbsp;</strong><strong class="f_CodeExample" style="font-weight: bold; color: #008000;">&quot;</strong></p>
+<p class="p_CodeExample"><strong class="f_CodeExample" style="font-weight: bold; color: #008000;">&nbsp;&nbsp;&nbsp;</strong><strong class="f_CodeExample" style="font-style: italic; font-weight: bold; color: #008000;">&nbsp;Und&nbsp;dann&nbsp;noch&nbsp;ggfs.&nbsp;Paging</strong></p>
+<p class="p_CodeExample"><strong class="f_CodeExample" style="font-weight: bold; color: #008000;">&nbsp;&nbsp;&quot;</strong></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;selectedAPISoftwarePackage&nbsp;:=&nbsp;sortedTotalAPISoftwarePackage&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mskRestStart:&nbsp;aTSTAPIPRSoftwarePackageListStore&nbsp;getStart&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;limit:&nbsp;aTSTAPIPRSoftwarePackageListStore&nbsp;getLimit&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;page:&nbsp;aTSTAPIPRSoftwarePackageListStore&nbsp;getPage.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span><span class="f_CodeExample" style="color: #008000;">&nbsp;</span><em class="f_CodeExample" style="font-style: italic; color: #008000;">&quot;</em><strong class="f_CodeExample" style="font-style: italic; font-weight: bold; color: #008000;">Wir&nbsp;bauen&nbsp;die&nbsp;Rückgabestruktur&nbsp;zusammen</strong><em class="f_CodeExample" style="font-style: italic; color: #008000;">&quot;</em></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;^(self&nbsp;restAnswerClass&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;okRequestFor:&nbsp;aMSKRestCallOptions&nbsp;restCallInstance&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result:&nbsp;&nbsp;(TSTAPISoftwarePackageListStoreRL&nbsp;withAPIList:&nbsp;selectedAPISoftwarePackage&nbsp;total:&nbsp;totalAPISoftwarePackage))&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><em class="f_CodeExample" style="font-style: italic; color: #008000;">&quot;</em><strong class="f_CodeExample" style="font-style: italic; font-weight: bold; color: #008000;">Wir&nbsp;ändern&nbsp;keine&nbsp;Daten&nbsp;-&nbsp;daher&nbsp;kann&nbsp;man&nbsp;auf&nbsp;ein&nbsp;Commit&nbsp;verzichten,&nbsp;und&nbsp;einfach&nbsp;ein&nbsp;Abort&nbsp;erzwingen</strong><em class="f_CodeExample" style="font-style: italic; color: #008000;">&quot; &nbsp; &nbsp; &nbsp; &nbsp;</em><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;successWithoutCommitCall;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yourself</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">&nbsp;</span></h2>
+<h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">Weitere Codebeispiele</span></h2>
+<h3 class="p_Heading3" style="page-break-after: avoid;"><span class="f_Heading3">Ermittlung aller vorhanden Software Packages (Snippet):</span></h3>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">PackageOrganizer&nbsp;default&nbsp;packages&nbsp;do:[&nbsp;:aPackageInfo&nbsp;|</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;|&nbsp;&nbsp;versionString&nbsp;packageName&nbsp;newInstance&nbsp;|</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;</span><em class="f_CodeExample" style="font-style: italic; color: #008000;">&quot;</em><strong class="f_CodeExample" style="font-style: italic; font-weight: bold; color: #008000;">Die&nbsp;Liste&nbsp;der&nbsp;Packages&nbsp;soll&nbsp;immer&nbsp;sortiert&nbsp;erscheinen</strong><em class="f_CodeExample" style="font-style: italic; color: #008000;">&quot;</em></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;packageInfos&nbsp;:=&nbsp;SortedCollection&nbsp;sortBlock:&nbsp;[&nbsp;:a&nbsp;:b&nbsp;|&nbsp;a&nbsp;getName&nbsp;&lt;&nbsp;&nbsp;b&nbsp;getName&nbsp;].</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><em class="f_CodeExample" style="font-style: italic; color: #008000;">&nbsp;&nbsp;&quot;</em><strong class="f_CodeExample" style="font-style: italic; font-weight: bold; color: #008000;">Meine&nbsp;Packages&nbsp;mit&nbsp;meinem&nbsp;eigenen&nbsp;Code&nbsp;führe&nbsp;ich&nbsp;hieer&nbsp;in&nbsp;einer&nbsp;Liste&nbsp;auf</strong><em class="f_CodeExample" style="font-style: italic; color: #008000;">&quot;</em></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;myPackageNames&nbsp;:=&nbsp;#(&nbsp;'GessCATIProject'&nbsp;'GessCATIProjectExtension'&nbsp;'GessCATIProjectREST'&nbsp;'GessCATIProjectInfluxDB'&nbsp;&nbsp;).</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;versionString&nbsp;:=&nbsp;aPackageInfo&nbsp;isNil&nbsp;ifTrue:[&nbsp;'Not&nbsp;Loaded'&nbsp;]&nbsp;ifFalse:[&nbsp;aPackageInfo&nbsp;versionString&nbsp;].</span></p>
+<p class="p_CodeExample"><em class="f_CodeExample" style="font-style: italic; color: #008000;">&nbsp;&nbsp;&quot;</em><strong class="f_CodeExample" style="font-style: italic; font-weight: bold; color: #008000;">Bei&nbsp;den&nbsp;eigenen&nbsp;Packages&nbsp;packe&nbsp;ich&nbsp;noch&nbsp;ein&nbsp;'_'&nbsp;vor&nbsp;den&nbsp;Namen&nbsp;-&nbsp;dadurch&nbsp;erscheinen&nbsp;sie&nbsp;am&nbsp;Anfang&nbsp;der&nbsp;List</strong><em class="f_CodeExample" style="font-style: italic; color: #008000;">&quot;</em></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;packageName&nbsp;:=&nbsp;((myPackageNames&nbsp;includes:&nbsp;aPackageInfo&nbsp;name)&nbsp;ifTrue:[&nbsp;'_'&nbsp;]&nbsp;ifFalse:[&nbsp;''&nbsp;]),&nbsp;aPackageInfo&nbsp;name.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;newInstance&nbsp;:=&nbsp;TSTAPISoftwarePackage&nbsp;newInitialized&nbsp;setAllAttributesToNil.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;newInstance</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;setName:&nbsp;packageName&nbsp;asUnicodeString&nbsp;;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;setVersion:&nbsp;versionString&nbsp;asUnicodeString.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;packageInfos&nbsp;add:&nbsp;newInstance</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">].</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript">
+
+
+
+  $(document).ready(function(){
+    $(window).bind('resize', function() {
+      var y = $('#idheader').height(); 
+      $('#idcontent').css('margin-top', y);
+      var par = window.parent;
+      if ($( par ).width() <= $( window ).width()+20) {
+        $('#idheader').css('position', 'relative');
+        $('#idcontent').css('margin-top', 0);
+        $('#idbacktotop').css('display', 'block');
+        $('.hmanchor').css('margin-top', -20);
+	$('.hmanchor').css('padding-top', 20);
+      }
+      else {
+        $('#idheader').css('position', 'fixed');
+        $('#idcontent').css('margin-top', $('#idheader').height());
+        $('#idbacktotop').css('display', 'none');
+        $('.hmanchor').css('margin-top', -y-20);
+	$('.hmanchor').css('padding-top', y+20);
+      }
+    });
+    
+    $(window).resize(); //trigger event for initially small displays
+  });
+
+if ((!parent.hmNavigationFrame) && (parent.location) && (parent.location.href)) { $('.sync-toc').show();$('p.crumbs').hide();}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <title>Hintergrundprozesse</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta name="description" content="Wenn es zu lange dauert ... Ein API-Call in der Kategorie &quot;long&quot; oder &quot;memory&quot; sollte trotzdem zügig sein. Synchrone API-Calls mit einer Dauer von mehr als 60 Sekunden sind..." />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <link type="text/css" href="custom.css" rel="stylesheet" />
+
+   <style TYPE="text/css" media="screen"> 
+      html, body { margin:0; 
+        padding:0; 
+        background: #ffffff; 
+      } 
+      div#printheader { display: none; }
+      #idheader { 
+        width:100%; 
+        height:auto; 
+        padding: 0; 
+        margin: 0;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+      } 
+      /* The "min-height" for "#idheader table" ensures that the (blue) header of the topic
+         has at least the same height as the header of the navigation panel left of it */
+      #idheader table { background: #f5f5f5; min-height: 59px }             
+      #idheader h1 span { color: #157fcc }     
+      #idnav {
+        text-align: right;
+        width: 126px;
+        vertical-align: middle;        
+      } 
+      #idnav a { text-decoration: none }
+      #idnav span {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-left: 4px;
+        background:url('hm_webhelp_buttons_grey.png') top left no-repeat;
+      } 
+      #idnav a span {
+        background-image:url('hm_webhelp_buttons_blue.png');
+      } 
+      #idnav a span:hover {
+        background-image:url('hm_webhelp_buttons_orange.png');
+      } 
+      #idnav span.hmbtnprev { background-position: 0 -32px }
+      #idnav span.hmbtnnext { background-position: -24px -32px }
+      #idnav span.hmbtntop  { background-position: -48px -32px }
+      #idnav span.hmbtntoggle  { width: 20px; background-position: -70px -32px }
+      #idnav span.hmbtnprint  { background-position: -88px -32px }
+
+      #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+      #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+      #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+      #callout-table a {text-decoration: none; color: blue;}
+      #callout-table a:visited {text-decoration: none; color: blue;}
+      #overview-table a {text-decoration: none; color: black;}
+      #overview-table a:visited {text-decoration: none; color: black;}
+      #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}       
+      p.help-url { margin: 20px 0 5px 0; text-align: center; font-size: 80%; text-decoration: none }      
+      #switchtoggles { text-align: right; padding: 0 2px 0 0; font-size: 90%; } 
+      .sync-toc { color: #157fcc; font-size: 8pt; font-weight: bold; display: none; }
+      .sync-toc a { color: #157fcc; text-decoration: none; font-weight: bold;}
+      .sync-toc a:visited { color: #157fcc; }
+      .sync-toc a:hover { text-decoration: underline; }
+      a.hmanchor { display: inline-block; margin-top: -4em; padding-top: 4em }	  
+   </style>
+   <style TYPE="text/css" media="print">
+      div#idheader, img.dropdown-toggle-icon, p.help-url { display:none } 
+   </style>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <script type="text/javascript">
+     HMSyncTOC("index.html", "hintergrundprozesse.html");
+   </script>
+   <script type="text/javascript" src="highlight.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){highlight();});
+   </script>
+</head>
+<body>
+
+
+<div id="printheader"><h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Hintergrundprozesse</span></h1>
+</div>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left; vertical-align:bottom">
+      <p class="sync-toc">&lt;&lt; <a rel="nofollow" href="index.html?hintergrundprozesse.html" target="_top">Click to Display Table of Contents</a> &gt;&gt;</p>
+      <p class="crumbs"><b>Navigation:</b>&nbsp;
+      &raquo;No topics above this level&laquo;
+      </p>
+   
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Hintergrundprozesse</span></h1>
+
+    </td>
+    <td class="topichead" id="idnav">
+      
+      <a href="api-requests.html" title="Previous Topic"><span class="hmbtnprev"></span></a>
+      <a href="introduction.html" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="rabbitmq-und-postgresql-anbind.html" title="Next Topic"><span class="hmbtnnext"></span></a>
+      
+    </td>
+  </tr>  
+</table>
+</div>
+</div>  
+
+<div id="idcontent"><div id="innerdiv">
+<!-- Ask Internet Explorer 6.users to update their obsolete and dangerous browser --> 
+<!--[if lt IE 7]><div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
+
+<!--ZOOMRESTART-->
+<h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">Wenn es zu lange dauert ...</span></h2>
+<p class="p_BodyText"><span class="f_BodyText">Ein API-Call in der Kategorie &quot;long&quot; oder &quot;memory&quot; sollte trotzdem zügig sein. Synchrone API-Calls mit einer Dauer von mehr als 60 Sekunden sind keine Lösung und es wird zu problematischen Unterbrechnungen in den Anwendungen kommen. Ein Ausweg ist nur die Implementierung einer komfortalen Background-Processing Unit.</span></p>
+<p class="p_BodyText"><span class="f_BodyText">Aus Benutzersicht wird der entsprechende Call getätigt, ein Wartedialog erscheint und der Benutzer bekommt Informationen über sein Hintergrundprozess angezeigt:</span></p>
+<p class="p_BodyText" style="text-indent: 0; padding-left: 13px; margin-left: 0;"><span class="f_BodyText" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#8226;</span><span class="f_BodyText">Position in der Queue</span></p>
+<p class="p_BodyText" style="text-indent: 0; padding-left: 13px; margin-left: 0;"><span class="f_BodyText" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#8226;</span><span class="f_BodyText">Status: Wartend oder Aktiv</span></p>
+<p class="p_BodyText" style="text-indent: 0; padding-left: 13px; margin-left: 0;"><span class="f_BodyText" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#8226;</span><span class="f_BodyText">Abarbeitung in Prozentangabe</span></p>
+<p class="p_BodyText"><span class="f_BodyText">Für die Abarbeitung muß man also wissen, welcher Benutzer in welcher Session diesen Job durchgeführt hat. Mann kann RabbitMQ für die Kommunikation mit den Clients nutzen (was dieser wieder etwas komplizierter machen). Man könnte also für einfache Prozesse auch einen API-Call anbieten, um den Status eines Prozesses zu erkennen.</span></p>
+<h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">Probleme beim Hintergrundprozess</span></h2>
+<p class="p_BodyText"><span class="f_BodyText">Ein Hintergrundprozess ist ein komplizierterer Prozess:</span></p>
+<p class="p_BodyText" style="text-indent: 0; padding-left: 13px; margin-left: 0;"><span class="f_BodyText" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#8226;</span><span class="f_BodyText">Der Prozess benötigt eventuell mehrere &quot;Teil&quot;-Commits, um die Arbeit zu erledigen</span></p>
+<p class="p_BodyText" style="text-indent: 0; padding-left: 13px; margin-left: 0;"><span class="f_BodyText" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#8226;</span><span class="f_BodyText">Die &quot;Teil&quot;-Commits dürfen die Daten nicht in einem ungültigen Zustand zurücklassen.</span></p>
+<p class="p_BodyText" style="text-indent: 0; padding-left: 13px; margin-left: 0;"><span class="f_BodyText" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#8226;</span><span class="f_BodyText">Concurrency-Probleme müssen intern gelöst werden.</span></p>
+<p class="p_BodyText" style="text-indent: 0; padding-left: 13px; margin-left: 0;"><span class="f_BodyText" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#8226;</span><span class="f_BodyText">Ein Rollback ist unter Umständen nur schwierig zu programmieren, wenn &quot;Teil&quot;-Commits im Spiel sind.</span></p>
+<p class="p_BodyText" style="text-indent: 0; padding-left: 13px; margin-left: 0;"><span class="f_BodyText" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#8226;</span><span class="f_BodyText">Es gibt bestimmte Muster bei Gemstone</span></p>
+<p class="p_BodyText" style="text-indent: 0; padding-left: 26px; margin-left: 0;"><span class="f_BodyText" style="font-family: 'Courier New';display:inline-block;width:13px;margin-left:-13px">o</span><span class="f_BodyText">Teilstrukturen werden - nicht erreichbar für Benutzer - aufgebaut und erst beim finalen Commit in den Arbeitsbereich des Benutzer verlegt.</span></p>
+<h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">Dispatchen von Hintergrundprozessen</span></h2>
+<p class="p_BodyText"><span class="f_BodyText">Und ein weiteres Problem: Wenn die Queue der Hintergrundprozesse durch mehrere Gemstone/S Prozesse abgearbeitet werden solleb, könnte man als Benutzer in die Versuchung kommen, durch die UI mehrere Hintergrundprozesse zu starten. Das kann aber zu logischen Problemen führen (Reihenfolge ist nicht mehr gewährleistet). </span></p>
+<p class="p_BodyText"><span class="f_BodyText">Also sollte ein Benutzer immer nur einen Hintergrundprozess gleichzeitig starten können und danach kann er nichts mehr weiter machen. Wenn doch, dann muß der Entwickler sehr vorsichtig sein, was er erlaubt.</span></p>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript">
+
+
+
+  $(document).ready(function(){
+    $(window).bind('resize', function() {
+      var y = $('#idheader').height(); 
+      $('#idcontent').css('margin-top', y);
+      var par = window.parent;
+      if ($( par ).width() <= $( window ).width()+20) {
+        $('#idheader').css('position', 'relative');
+        $('#idcontent').css('margin-top', 0);
+        $('#idbacktotop').css('display', 'block');
+        $('.hmanchor').css('margin-top', -20);
+	$('.hmanchor').css('padding-top', 20);
+      }
+      else {
+        $('#idheader').css('position', 'fixed');
+        $('#idcontent').css('margin-top', $('#idheader').height());
+        $('#idbacktotop').css('display', 'none');
+        $('.hmanchor').css('margin-top', -y-20);
+	$('.hmanchor').css('padding-top', y+20);
+      }
+    });
+    
+    $(window).resize(); //trigger event for initially small displays
+  });
+
+if ((!parent.hmNavigationFrame) && (parent.location) && (parent.location.href)) { $('.sync-toc').show();$('p.crumbs').hide();}
+
+</script>
+</body>
+</html>

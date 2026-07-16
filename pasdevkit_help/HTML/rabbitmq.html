@@ -1,0 +1,332 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <title>Linux - Ubuntu 24.04 &gt; RabbitMQ</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta name="description" content="Einführung RabbitMQ ist ein Verteiler von Nachrichten. Über RabbitMQ kann man Programme in verschiedenen Programmiersprachen kommunizieren lassen. The Home Page of RabbitMQ Bei" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <link type="text/css" href="custom.css" rel="stylesheet" />
+
+   <style TYPE="text/css" media="screen"> 
+      html, body { margin:0; 
+        padding:0; 
+        background: #ffffff; 
+      } 
+      div#printheader { display: none; }
+      #idheader { 
+        width:100%; 
+        height:auto; 
+        padding: 0; 
+        margin: 0;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+      } 
+      /* The "min-height" for "#idheader table" ensures that the (blue) header of the topic
+         has at least the same height as the header of the navigation panel left of it */
+      #idheader table { background: #f5f5f5; min-height: 59px }             
+      #idheader h1 span { color: #157fcc }     
+      #idnav {
+        text-align: right;
+        width: 126px;
+        vertical-align: middle;        
+      } 
+      #idnav a { text-decoration: none }
+      #idnav span {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-left: 4px;
+        background:url('hm_webhelp_buttons_grey.png') top left no-repeat;
+      } 
+      #idnav a span {
+        background-image:url('hm_webhelp_buttons_blue.png');
+      } 
+      #idnav a span:hover {
+        background-image:url('hm_webhelp_buttons_orange.png');
+      } 
+      #idnav span.hmbtnprev { background-position: 0 -32px }
+      #idnav span.hmbtnnext { background-position: -24px -32px }
+      #idnav span.hmbtntop  { background-position: -48px -32px }
+      #idnav span.hmbtntoggle  { width: 20px; background-position: -70px -32px }
+      #idnav span.hmbtnprint  { background-position: -88px -32px }
+
+      #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+      #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+      #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+      #callout-table a {text-decoration: none; color: blue;}
+      #callout-table a:visited {text-decoration: none; color: blue;}
+      #overview-table a {text-decoration: none; color: black;}
+      #overview-table a:visited {text-decoration: none; color: black;}
+      #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}       
+      p.help-url { margin: 20px 0 5px 0; text-align: center; font-size: 80%; text-decoration: none }      
+      #switchtoggles { text-align: right; padding: 0 2px 0 0; font-size: 90%; } 
+      .sync-toc { color: #157fcc; font-size: 8pt; font-weight: bold; display: none; }
+      .sync-toc a { color: #157fcc; text-decoration: none; font-weight: bold;}
+      .sync-toc a:visited { color: #157fcc; }
+      .sync-toc a:hover { text-decoration: underline; }
+      a.hmanchor { display: inline-block; margin-top: -4em; padding-top: 4em }	  
+   </style>
+   <style TYPE="text/css" media="print">
+      div#idheader, img.dropdown-toggle-icon, p.help-url { display:none } 
+   </style>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <script type="text/javascript">
+     HMSyncTOC("index.html", "rabbitmq.html");
+   </script>
+   <script type="text/javascript" src="highlight.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){highlight();});
+   </script>
+</head>
+<body>
+
+
+<div id="printheader"><h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">RabbitMQ</span></h1>
+</div>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left; vertical-align:bottom">
+      <p class="sync-toc">&lt;&lt; <a rel="nofollow" href="index.html?rabbitmq.html" target="_top">Click to Display Table of Contents</a> &gt;&gt;</p>
+      <p class="crumbs"><b>Navigation:</b>&nbsp;
+      
+      <a href="linux---ubuntu-24_04.html">Linux - Ubuntu 24.04</a>&nbsp;&gt;</p>
+   
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">RabbitMQ</span></h1>
+
+    </td>
+    <td class="topichead" id="idnav">
+      
+      <a href="apache2.html" title="Previous Topic"><span class="hmbtnprev"></span></a>
+      <a href="linux---ubuntu-24_04.html" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="postgresql.html" title="Next Topic"><span class="hmbtnnext"></span></a>
+      
+    </td>
+  </tr>  
+</table>
+</div>
+</div>  
+
+<div id="idcontent"><div id="innerdiv">
+<!-- Ask Internet Explorer 6.users to update their obsolete and dangerous browser --> 
+<!--[if lt IE 7]><div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
+
+<!--ZOOMRESTART-->
+<h1 class="p_Heading1Black" style="page-break-after: avoid;"><span class="f_Heading1Black">Einführung</span></h1>
+<p class="p_BodyText"><span class="f_BodyText">RabbitMQ ist ein Verteiler von Nachrichten. Über RabbitMQ kann man Programme in verschiedenen Programmiersprachen kommunizieren lassen.</span></p>
+<p class="p_BodyText" style="text-indent: 0; padding-left: 13px; margin-left: 0;"><span class="f_BodyText" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#8226;</span><span class="f_BodyText">The <a href="https://www.rabbitmq.com/" target="_blank" class="weblink">Home Page of RabbitMQ</a></span></p>
+<p class="p_BodyText"><span class="f_BodyText">Bei der Installation von RabbitMQ muß man eine Client- und eine Server-Installation unterscheiden. Eine Client-Installation ist dann möglich, wenn ein RabbitMQ Server auf einer anderen Maschine genutzt werden soll - ansonsten ist eine Vollinstallation notwendig.</span></p>
+<h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">Installation</span></h2>
+<p class="p_BodyText"><span class="f_BodyText">Man beachte das Installationsscript unter &quot;pas&quot;.</span></p>
+<h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">Client-Installation</span></h2>
+<p class="p_Normal">Die Client-Installation erfolgt durch die Installation eines Packages unter Ubuntu:</p>
+<p class="p_Normal">&nbsp;</p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span><br />
+<span class="f_CodeExample">sudo&nbsp;apt-get&nbsp;install&nbsp;librabbitmq-dev</span><br />
+<span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_Normal">&nbsp;</p>
+<p class="p_Normal">Diese Installation legt die notwendige Bibliothek unter '/lib/x86_64-linux-gnu/librabbitmq.so.4' ab. Auf diese Bibliothek greift das Gemstone/RabbitMQ Binding zu. Hierzu braucht man mindestens die Version Gemstone/S 3.6.5.</p>
+<p class="p_Normal">&nbsp;</p>
+<h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">Server-Installation</span></h2>
+<p class="p_BodyText"><span class="f_BodyText">Bei der Server-Installation greifen wir auf die Installation von Cloudsmith zurück, die auch auf den offiziellen Webseiten von RabbitMQ erwähnt wird als eine der beiden Hauptanbieter von aktuellen Packages. </span></p>
+<p class="p_BodyText"><span class="f_BodyText">Die wesentlichen Skripte sind für die aktuellen Ubuntu-Serverlizenzen zusammengefasst.</span></p>
+<h3 class="p_Heading3" style="page-break-after: avoid;"><span class="f_Heading3">Ubuntu 22.04 (jammy)</span></h3>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">#!/usr/bin/sh</span><br />
+<span class="f_CodeExample">sudo&nbsp;apt-get&nbsp;install&nbsp;curl&nbsp;gnupg&nbsp;apt-transport-https&nbsp;-y</span><br />
+<span class="f_CodeExample">##&nbsp;Team&nbsp;RabbitMQ's&nbsp;main&nbsp;signing&nbsp;key</span><br />
+<span class="f_CodeExample">curl&nbsp;-1sLf&nbsp;&quot;https://keys.openpgp.org/vks/v1/by-fingerprint/0A9AF2115F4687BD29803A206B73A36E6026DFCA&quot;&nbsp;|&nbsp;sudo&nbsp;gpg&nbsp;--dearmor&nbsp;|&nbsp;sudo&nbsp;tee&nbsp;/usr/share/keyrings/com.rabbitmq.team.gpg&nbsp;&gt;&nbsp;/dev/null</span><br />
+<span class="f_CodeExample">##&nbsp;Cloudsmith:&nbsp;modern&nbsp;Erlang&nbsp;repository</span><br />
+<span class="f_CodeExample">curl&nbsp;-1sLf&nbsp;https://dl.cloudsmith.io/public/rabbitmq/rabbitmq-erlang/gpg.E495BB49CC4BBE5B.key&nbsp;|&nbsp;sudo&nbsp;gpg&nbsp;--dearmor&nbsp;|&nbsp;sudo&nbsp;tee&nbsp;/usr/share/keyrings/io.cloudsmith.rabbitmq.E495BB49CC4BBE5B.gpg&nbsp;&gt;&nbsp;/dev/null</span><br />
+<span class="f_CodeExample">##&nbsp;Cloudsmith:&nbsp;RabbitMQ&nbsp;repository</span><br />
+<span class="f_CodeExample">curl&nbsp;-1sLf&nbsp;https://dl.cloudsmith.io/public/rabbitmq/rabbitmq-server/gpg.9F4587F226208342.key&nbsp;|&nbsp;sudo&nbsp;gpg&nbsp;--dearmor&nbsp;|&nbsp;sudo&nbsp;tee&nbsp;/usr/share/keyrings/io.cloudsmith.rabbitmq.9F4587F226208342.gpg&nbsp;&gt;&nbsp;/dev/null</span><br />
+<span class="f_CodeExample">##&nbsp;Add&nbsp;apt&nbsp;repositories&nbsp;maintained&nbsp;by&nbsp;Team&nbsp;RabbitMQ</span><br />
+<span class="f_CodeExample">sudo&nbsp;tee&nbsp;/etc/apt/sources.list.d/rabbitmq.list&nbsp;&lt;&lt;EOF</span><br />
+<span class="f_CodeExample">##&nbsp;Provides&nbsp;modern&nbsp;Erlang/OTP&nbsp;releases</span><br />
+<span class="f_CodeExample">##</span><br />
+<span class="f_CodeExample">deb&nbsp;[signed-by=/usr/share/keyrings/io.cloudsmith.rabbitmq.E495BB49CC4BBE5B.gpg]&nbsp;https://dl.cloudsmith.io/public/rabbitmq/rabbitmq-erlang/deb/ubuntu&nbsp;jammy&nbsp;main</span><br />
+<span class="f_CodeExample">deb-src&nbsp;[signed-by=/usr/share/keyrings/io.cloudsmith.rabbitmq.E495BB49CC4BBE5B.gpg]&nbsp;https://dl.cloudsmith.io/public/rabbitmq/rabbitmq-erlang/deb/ubuntu&nbsp;jammy&nbsp;main</span><br />
+<span class="f_CodeExample">##&nbsp;Provides&nbsp;RabbitMQ</span><br />
+<span class="f_CodeExample">##</span><br />
+<span class="f_CodeExample">deb&nbsp;[signed-by=/usr/share/keyrings/io.cloudsmith.rabbitmq.9F4587F226208342.gpg]&nbsp;https://dl.cloudsmith.io/public/rabbitmq/rabbitmq-server/deb/ubuntu&nbsp;jammy&nbsp;main</span><br />
+<span class="f_CodeExample">deb-src&nbsp;[signed-by=/usr/share/keyrings/io.cloudsmith.rabbitmq.9F4587F226208342.gpg]&nbsp;https://dl.cloudsmith.io/public/rabbitmq/rabbitmq-server/deb/ubuntu&nbsp;jammy&nbsp;main</span><br />
+<span class="f_CodeExample">EOF</span><br />
+<span class="f_CodeExample">##&nbsp;Update&nbsp;package&nbsp;indices</span><br />
+<span class="f_CodeExample">sudo&nbsp;apt-get&nbsp;update&nbsp;-y</span><br />
+<span class="f_CodeExample">##&nbsp;Install&nbsp;Erlang&nbsp;packages</span><br />
+<span class="f_CodeExample">sudo&nbsp;apt-get&nbsp;install&nbsp;-y&nbsp;erlang-base&nbsp;\</span><br />
+<span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;erlang-asn1&nbsp;erlang-crypto&nbsp;erlang-eldap&nbsp;erlang-ftp&nbsp;erlang-inets&nbsp;\</span><br />
+<span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;erlang-mnesia&nbsp;erlang-os-mon&nbsp;erlang-parsetools&nbsp;erlang-public-key&nbsp;\</span><br />
+<span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;erlang-runtime-tools&nbsp;erlang-snmp&nbsp;erlang-ssl&nbsp;\</span><br />
+<span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;erlang-syntax-tools&nbsp;erlang-tftp&nbsp;erlang-tools&nbsp;erlang-xmerl</span><br />
+<span class="f_CodeExample">##&nbsp;Install&nbsp;rabbitmq-server&nbsp;and&nbsp;its&nbsp;dependencies</span><br />
+<span class="f_CodeExample">sudo&nbsp;apt-get&nbsp;install&nbsp;rabbitmq-server&nbsp;-y&nbsp;--fix-missing</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<h3 class="p_Heading3" style="page-break-after: avoid;"><span class="f_Heading3">Ubuntu 24.04 (noble)</span></h3>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">#!/bin/sh</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">sudo&nbsp;apt-get&nbsp;install&nbsp;curl&nbsp;gnupg&nbsp;apt-transport-https&nbsp;-y</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">##&nbsp;Team&nbsp;RabbitMQ's&nbsp;signing&nbsp;key</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">curl&nbsp;-1sLf&nbsp;&quot;https://keys.openpgp.org/vks/v1/by-fingerprint/0A9AF2115F4687BD29803A206B73A36E6026DFCA&quot;&nbsp;|&nbsp;sudo&nbsp;gpg&nbsp;--dearmor&nbsp;|&nbsp;sudo&nbsp;tee&nbsp;/usr/share/keyrings/com.rabbitmq.team.gpg&nbsp;&gt;&nbsp;/dev/null</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">##&nbsp;Add&nbsp;apt&nbsp;repositories&nbsp;maintained&nbsp;by&nbsp;Team&nbsp;RabbitMQ</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">sudo&nbsp;tee&nbsp;/etc/apt/sources.list.d/rabbitmq.list&nbsp;&lt;&lt;EOF</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">##&nbsp;Modern&nbsp;Erlang/OTP&nbsp;releases</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">##</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">deb&nbsp;[arch=amd64&nbsp;signed-by=/usr/share/keyrings/com.rabbitmq.team.gpg]&nbsp;https://deb1.rabbitmq.com/rabbitmq-erlang/ubuntu/noble&nbsp;noble&nbsp;main</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">deb&nbsp;[arch=amd64&nbsp;signed-by=/usr/share/keyrings/com.rabbitmq.team.gpg]&nbsp;https://deb2.rabbitmq.com/rabbitmq-erlang/ubuntu/noble&nbsp;noble&nbsp;main</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">##&nbsp;Latest&nbsp;RabbitMQ&nbsp;releases</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">##</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">deb&nbsp;[arch=amd64&nbsp;signed-by=/usr/share/keyrings/com.rabbitmq.team.gpg]&nbsp;https://deb1.rabbitmq.com/rabbitmq-server/ubuntu/noble&nbsp;noble&nbsp;main</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">deb&nbsp;[arch=amd64&nbsp;signed-by=/usr/share/keyrings/com.rabbitmq.team.gpg]&nbsp;https://deb2.rabbitmq.com/rabbitmq-server/ubuntu/noble&nbsp;noble&nbsp;main</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">EOF</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">##&nbsp;Update&nbsp;package&nbsp;indices</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">sudo&nbsp;apt-get&nbsp;update&nbsp;-y</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">##&nbsp;Install&nbsp;Erlang&nbsp;packages</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">sudo&nbsp;apt-get&nbsp;install&nbsp;-y&nbsp;erlang-base&nbsp;\</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;erlang-asn1&nbsp;erlang-crypto&nbsp;erlang-eldap&nbsp;erlang-ftp&nbsp;erlang-inets&nbsp;\</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;erlang-mnesia&nbsp;erlang-os-mon&nbsp;erlang-parsetools&nbsp;erlang-public-key&nbsp;\</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;erlang-runtime-tools&nbsp;erlang-snmp&nbsp;erlang-ssl&nbsp;\</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;erlang-syntax-tools&nbsp;erlang-tftp&nbsp;erlang-tools&nbsp;erlang-xmerl</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">##&nbsp;Install&nbsp;rabbitmq-server&nbsp;and&nbsp;its&nbsp;dependencies</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">sudo&nbsp;apt-get&nbsp;install&nbsp;rabbitmq-server&nbsp;-y&nbsp;--fix-missing</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">&nbsp;</span></h2>
+<h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">RabbitMQ Version abfragen</span></h2>
+<p class="p_Normal">Die Version von rabbitMQ kann man über das folgende Statement ermitteln:</p>
+<p class="p_Normal">&nbsp;</p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">sudo&nbsp;&nbsp;rabbitmqctl&nbsp;version</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">Server Installation - Configuration</span></h2>
+<p class="p_BodyText"><span class="f_BodyText">Die Konfigurationsdatei sollte im Verzeichnis /etc/rabbitmq liegen. Nach der Installation ist das Verzeichnis aber leer. Um eine Konfigurationsdatei anzuleen, kann man einen einfachen Text-Editor benutzen und eine Datei mit dem Namen  </span><strong class="f_BodyText" style="font-weight: bold;">rabbitmq.conf</strong><span class="f_BodyText"> anlegen. Dort werden die folgenden Konfigurationseinträge reingeschrieben.</span></p>
+<h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">Starting and Stopping the Service</span></h2>
+<p class="p_BodyText"><span class="f_BodyText">Der Server kann mit dem folgendem Statement gestartet werden:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">sudo&nbsp;service&nbsp;rabbitmq-server&nbsp;start</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">Der Server kann mit dem folgendem Statement angehalten werden:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">sudo&nbsp;service&nbsp;rabbitmq-server&nbsp;stop</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">Der RabbitMQ Server wird nicht automatisch gestartet. Dies kann man aber mit dem folgenden Statemwent erreichen:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">sudo&nbsp;systemctl&nbsp;enable&nbsp;rabbitmq-server</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">SSL/TLS</span></h2>
+<p class="p_BodyText"><span class="f_BodyText">Rabbitmq is portable - so you have to do all the stuff by yourself. This ist </span><strong class="f_BodyText" style="font-weight: bold;">NOT</strong><span class="f_BodyText"> nice, but ok. You have to change the configuration file to make all stuff working under SSL. After the installation, RabbitMQ is only accessable via plain http. Here an example how to make changes, so that RabbitMQ works under SSL/TLS. You need your certification for your domain, a private key file (alles was mit &quot;blubber&quot; s.u. benannt wird) and a cacertfile (a summary of Level 1 certificates).</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">management.path_prefix&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;/rabbitmq</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">management.ssl.port&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;15671</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">management.ssl.cacertfile&nbsp;=&nbsp;/home/1234567/ssl/all_cacerts.pem</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">management.ssl.certfile&nbsp;&nbsp;&nbsp;=&nbsp;/home/1234567/ssl/blubber_ssl_certificate.pem</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">management.ssl.keyfile&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;/home/1234567/ssl/blubber_private_key.pem</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">listeners.ssl.default&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;5671</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">ssl_options.cacertfile&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;/home/1234567/ssl/all_cacerts.pem</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">ssl_options.certfile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;/home/1234567/ssl/blubber_ssl_certificate.pem</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">ssl_options.keyfile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;/home/1234567/ssl/blubber_private_key.pem</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">ssl_options.verify&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;verify_peer</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">#&nbsp;ssl_options.fail_if_no_peer_cert&nbsp;=&nbsp;true</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">The only problem here is to get a cacertfile. You may either create an example from all certification files located under /etc/ssl/certs via </span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">cat&nbsp;/etc/ssl/certs/*&nbsp;&gt;&nbsp;/home/1234567/ssl/all_cacerts.pem</span></p>
+<p class="p_BodyText"><span class="f_BodyText">or via other ways:</span></p>
+<p class="p_BodyText" style="text-indent: 0; padding-left: 13px; margin-left: 0;"><span class="f_BodyText" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#8226;</span><span class="f_BodyText"><a href="https://curl.se/docs/caextract.html" target="_blank" class="weblink">https://curl.se/docs/caextract.html</a></span></p>
+<p class="p_BodyText" style="text-indent: 0; padding-left: 13px; margin-left: 0;"><span class="f_BodyText" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#8226;</span><span class="f_BodyText"><a href="http://www.cacert.org/index.php?id=3" target="_blank" class="weblink">http://www.cacert.org/index.php?id=3</a></span></p>
+<h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">Firewall</span></h2>
+<p class="p_BodyText"><span class="f_BodyText">Always think about the ports you have to enable in your firewall: 15671, 15672, 5671, 5672 at least.</span></p>
+<h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">Installation of UI Management</span></h2>
+<p class="p_BodyText"><span class="f_BodyText">After a fresh installation there is no UI Management plugin installed. So you have no browser UI to manage your RabbitMQ instance. You have to do this via rabbitmq's command line tool.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">sudo&nbsp;rabbitmq-plugins&nbsp;enable&nbsp;rabbitmq_management</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">Public Login into the UI Management</span></h2>
+<p class="p_BodyText"><span class="f_BodyText">Well, when rabbitmq is installed, there is a guest / guest user, but with this user you are not allowed to enter into the UI Management plugin. So you have to add a new user. For a replacement of the guest user, please do not define it as an adminstrator. The <a href="https://stackoverflow.com/questions/40436425/how-do-i-create-or-add-a-user-to-rabbitmq" target="_blank" class="weblink">solution</a> is more or less:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">sudo&nbsp;rabbitmqctl&nbsp;add_user&nbsp;username&nbsp;password</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">sudo&nbsp;rabbitmqctl&nbsp;set_user_tags&nbsp;username&nbsp;administrator</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">sudo&nbsp;rabbitmqctl&nbsp;set_permissions&nbsp;-p&nbsp;/&nbsp;username&nbsp;&quot;.*&quot;&nbsp;&quot;.*&quot;&nbsp;&quot;.*&quot;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<h3 class="p_Heading3" style="page-break-after: avoid;"><span class="f_Heading3">User Interface</span></h3>
+<p class="p_BodyText"><span class="f_BodyText">Die Benutzeroberfläche kann bei https und ssl/tls wie folgt aufgerufen werden:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">https://&lt;fullname&gt;:15671</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">Die Benutzeroberfläche kann lokal mit http aufgerufen werden:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">http:/localhost:15672</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">Aktivierung - MQTT über WebSockets</span></h2>
+<p class="p_BodyText"><span class="f_BodyText">Für die Anbindung von WebApplication wird das <a href="https://www.rabbitmq.com/web-mqtt.html" target="_blank" class="weblink">RabbitMQ Web MQTT Plugin</a> genutzt. Es wird mit RabbitMQ ausgeliefert. Die Anwendungen bauen einen WebSocket auf, abonnieren die gewünschten Kanäle und erhalten dann die Nachrichten. Man beachte, daß man für die MQTT Anbindung einen eigenen Benutzer festlegen sollte. Die Credentials für diesen Benutzer erhält der Client über das Session Objekt. Diese Informationen muß er bei der Anmeldung bei MQTT über WebSockets nutzen.</span></p>
+<p class="p_BodyText"><span class="f_BodyText">Man möge beachten, dass man den default_user und default_pass für dieses Plugin auf einen Benutzer setzt, der </span><strong class="f_BodyText" style="font-weight: bold;">keine</strong><span class="f_BodyText"> Berechtigungen hat. Da die WebSocket Anbindung durch einen Apache getunnelt wird, erscheinen alle Anmeldungen als &quot;localhost&quot; getrieben - und dadurch hätten automatisch der default_user alle Berechtigungen.</span></p>
+<p class="p_BodyText"><span class="f_BodyText">Das Plugin gibt einen WebSocket Endpunkt unter 15675 frei (&quot;</span><span style="font-size: 13px; font-family: 'Courier New',Courier,monospace;">ws://127.0.0.1:15675/ws&quot;)</span><span class="f_BodyText">. </span></p>
+<h3 class="p_Heading3" style="page-break-after: avoid;"><span class="f_Heading3">Freigabe des Plugins</span></h3>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">rabbitmq-plugins&nbsp;enable&nbsp;rabbitmq_web_mqtt</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<h3 class="p_Heading3" style="page-break-after: avoid;"><span class="f_Heading3">Konfiguration des Plugin</span></h3>
+<p class="p_Normal">Hier die Konfigurationseinträge für das Plugin. Der benutzer &quot;guest&quot; sollte abgeschaltet werden und ein anderer Benutzer genutzt werden.</p>
+<p class="p_Normal">&nbsp;</p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">web_mqtt.ssl.port&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;15676</span><br />
+<span class="f_CodeExample">web_mqtt.ssl.backlog&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;1024</span><br />
+<span class="f_CodeExample">web_mqtt.ssl.cacertfile&nbsp;=&nbsp;/path/to/ca_certificate.pem</span><br />
+<span class="f_CodeExample">web_mqtt.ssl.certfile&nbsp;&nbsp;&nbsp;=&nbsp;/path/to/server_certificate.pem</span><br />
+<span class="f_CodeExample">web_mqtt.ssl.keyfile&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;/path/to/server_key.pem</span><br />
+<span class="f_CodeExample">#&nbsp;needed&nbsp;when&nbsp;private&nbsp;key&nbsp;has&nbsp;a&nbsp;passphrase</span><br />
+<span class="f_CodeExample">#&nbsp;web_mqtt.ssl.password&nbsp;&nbsp;&nbsp;=&nbsp;changeme</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript">
+
+
+
+  $(document).ready(function(){
+    $(window).bind('resize', function() {
+      var y = $('#idheader').height(); 
+      $('#idcontent').css('margin-top', y);
+      var par = window.parent;
+      if ($( par ).width() <= $( window ).width()+20) {
+        $('#idheader').css('position', 'relative');
+        $('#idcontent').css('margin-top', 0);
+        $('#idbacktotop').css('display', 'block');
+        $('.hmanchor').css('margin-top', -20);
+	$('.hmanchor').css('padding-top', 20);
+      }
+      else {
+        $('#idheader').css('position', 'fixed');
+        $('#idcontent').css('margin-top', $('#idheader').height());
+        $('#idbacktotop').css('display', 'none');
+        $('.hmanchor').css('margin-top', -y-20);
+	$('.hmanchor').css('padding-top', y+20);
+      }
+    });
+    
+    $(window).resize(); //trigger event for initially small displays
+  });
+
+if ((!parent.hmNavigationFrame) && (parent.location) && (parent.location.href)) { $('.sync-toc').show();$('p.crumbs').hide();}
+
+</script>
+</body>
+</html>
