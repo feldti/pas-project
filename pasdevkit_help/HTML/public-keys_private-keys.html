@@ -125,23 +125,36 @@
 <p class="p_BodyText"><span class="f_BodyText">Das Tool putty benötigt immer Dateien im &quot;ppk&quot; Format. In dieser Datei sind sowohl der private-Key, wie auch der Public-Key enthalten.</span></p>
 <h1 class="p_Heading1Black" style="page-break-after: avoid;"><span class="f_Heading1Black">Erzeugung neuer Schlüssel</span></h1>
 <p class="p_BodyText"><span class="f_BodyText">Ein neues Schlüsselpaar kann man mit Tools aus OpenSSH erstellen:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
 <p class="p_CodeExample"><span class="f_CodeExample">ssh-keygen&nbsp;-t&nbsp;rsa&nbsp;-b&nbsp;4096</span></p>
 <p class="p_CodeExample"><span class="f_CodeExample">oder</span></p>
 <p class="p_CodeExample"><span class="f_CodeExample">ssh-keygen</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
 <p class="p_BodyText"><span class="f_BodyText">Das erste Beispiel ist angeführt, weil man manchmal einen rsa-Schlüssel braucht. Ansonsten kann man es mit dem ed25519 (default) versuchen (Dieser Algorithmus wird aber ev. auf dem Zielrechner noch nicht unterstützt. Die Schlüssel werden i.d.R. unter ~/.ssl im HOME-Verzeichnis des Benutzers abgelegt.</span></p>
 <h1 class="p_Heading1Black" style="page-break-after: avoid;"><span class="f_Heading1Black">Konvertierung ppk -&gt; OpenSSH</span></h1>
 <p class="p_BodyText"><span class="f_BodyText">Wenn man auf einen Rechner mittels ssh zugreifen will, muß man den public-key auf der Zielmaschine hinterlegen. putty und ansible nehmen dann den private-key auf dem eigenen Rechner und checken das gegeb den &nbsp;public-key auf dem Zielrechner.</span></p>
 <p class="p_BodyText"><span class="f_BodyText">Wenn man dann nur ppk-Dateien hat, muss man den private-Key (für ansible) oder den public-Key (für ssh) in eigenen Dateien erzeugen können:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
 <p class="p_CodeExample"><span class="f_CodeExample">puttygen&nbsp;putty.ppk&nbsp;-O&nbsp;private-openssh&nbsp;-o&nbsp;putty_private.rsa</span></p>
 <p class="p_CodeExample"><span class="f_CodeExample">puttygen&nbsp;putty.ppk&nbsp;-O&nbsp;public-openssh&nbsp;-o&nbsp;putty_public.rsa</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
 <p class="p_BodyText"><span class="f_BodyText">Die Zugriffsrechte auf die Datei mit dem private-Key muß immer 600 sein, ansonsten meckern die Programme. Das obige Tool kann man mittels</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
 <p class="p_CodeExample"><span class="f_CodeExample">sudo&nbsp;apt-get&nbsp;install&nbsp;putty-tools</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
 <p class="p_BodyText"><span class="f_BodyText">installieren.</span></p>
 <h1 class="p_Heading1Black" style="page-break-after: avoid;"><span class="f_Heading1Black">Kopieren eines public-Key auf einen Zielrechner</span></h1>
 <p class="p_BodyText"><span class="f_BodyText">Zuerst sollte man mittels &quot;ssh rechnername&quot; eine Verbindung zu dem Rechner aufbauen. Falls noch kein Kontakt aufgenommen wurde, dann muß man den Zugriff erlauben (nur bei der ersten Kontaktaufnahme erforderlich). Danach kann man mit dem folgenden Befehl den public-Key hinter einem Account hinterlegen.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
 <p class="p_CodeExample"><span class="f_CodeExample">ssh-copy-id&nbsp;-p&nbsp;port-nummer&nbsp;-i&nbsp;public-key-file&nbsp;[user@]rechnername</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
 <p class="p_BodyText"><span class="f_BodyText">Dazu muß man das Kennwort des Zielbenutzers kennen.</span></p>
-<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+<h1 class="p_Heading1Black" style="page-break-after: avoid;"><span class="f_Heading1Black">Wenn der Zielrechner neu aufgesetzt wurde.</span></h1>
+<p class="p_BodyText"><span class="f_BodyText">Wenn der Zielrechner in der Vergangenheit bereits genutzt wurde, man nun seinen public Key erneut auf den Rechner schieben möchte, dann wird man eine Warnung erhalten, daß die Identität des Zielrechners geändert hat: Dann sollte man den Rechner aus der Liste der bekannten Rechner entfernen:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">ssh-keygen&nbsp;-f&nbsp;'/home/&lt;benutzer&gt;/.ssh/known_hosts'&nbsp;-R&nbsp;'&lt;ip-nummer&gt;'</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">und danach das Kopieren des Public-Keys wiederholen</span></p>
 
 <!--ZOOMSTOP-->
 </div></div>

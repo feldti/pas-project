@@ -1,13 +1,13 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-   <title>Prometheus - Erfassung Statistikdaten Softwaresysteme</title>
+   <title>Prometheus - Erfassung Statistikdaten Softwaresysteme &gt; Anlieferung Prometheus - Push Interface</title>
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
    <meta name="generator" content="Help &amp; Manual" />
    <meta name="keywords" content="" />
-   <meta name="description" content="Rolle in PAS Prometheus soll als Datenhalter für Kennzahlen unseres Softwaresystems dienen. Es ist ein weit verbreitetes System in der IT-Welt. &nbsp;Der Entwickler hat sich gute..." />
+   <meta name="description" content="Einführung Wenn Prometheus Daten sammelt, dann geht die Initiative i.d.R. von dem Prometheus-Server aus. Das bedeutet dann natürlich auch, dass das abgefragte System auch..." />
    <link type="text/css" href="default.css" rel="stylesheet" />
    <link type="text/css" href="custom.css" rel="stylesheet" />
 
@@ -79,7 +79,7 @@
    <script type="text/javascript" src="helpman_topicinit.js"></script>
 
    <script type="text/javascript">
-     HMSyncTOC("index.html", "prometheus.html");
+     HMSyncTOC("index.html", "anlieferung-prometheus---push-.html");
    </script>
    <script type="text/javascript" src="highlight.js"></script>
    <script type="text/javascript">
@@ -89,26 +89,26 @@
 <body>
 
 
-<div id="printheader"><h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Prometheus - Erfassung Statistikdaten Softwaresysteme</span></h1>
+<div id="printheader"><h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Anlieferung Prometheus - Push Interface</span></h1>
 </div>
 <div id="idheader">
 <div id="idheaderbg">
 <table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
   <tr>
     <td class="topichead" style="text-align:left; vertical-align:bottom">
-      <p class="sync-toc">&lt;&lt; <a rel="nofollow" href="index.html?prometheus.html" target="_top">Click to Display Table of Contents</a> &gt;&gt;</p>
+      <p class="sync-toc">&lt;&lt; <a rel="nofollow" href="index.html?anlieferung-prometheus---push-.html" target="_top">Click to Display Table of Contents</a> &gt;&gt;</p>
       <p class="crumbs"><b>Navigation:</b>&nbsp;
-      &raquo;No topics above this level&laquo;
-      </p>
+      
+      <a href="prometheus.html">Prometheus - Erfassung Statistikdaten Softwaresysteme</a>&nbsp;&gt;</p>
    
-      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Prometheus - Erfassung Statistikdaten Softwaresysteme</span></h1>
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Anlieferung Prometheus - Push Interface</span></h1>
 
     </td>
     <td class="topichead" id="idnav">
       
-      <a href="importieren-der-quelltexte-nac.html" title="Previous Topic"><span class="hmbtnprev"></span></a>
-      <a href="introduction.html" title="Parent Chapter"><span class="hmbtntop"></span></a>
-      <a href="installation2.html" title="Next Topic"><span class="hmbtnnext"></span></a>
+      <a href="installation2.html" title="Previous Topic"><span class="hmbtnprev"></span></a>
+      <a href="prometheus.html" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="prometheus-und-gemstone.html" title="Next Topic"><span class="hmbtnnext"></span></a>
       
     </td>
   </tr>  
@@ -121,10 +121,28 @@
 <!--[if lt IE 7]><div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
 
 <!--ZOOMRESTART-->
-<h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">Rolle in PAS</span></h2>
-<p class="p_BodyText"><span class="f_BodyText">Prometheus soll als Datenhalter für Kennzahlen unseres Softwaresystems dienen. Es ist ein weit verbreitetes System in der IT-Welt. </span></p>
-<p class="p_BodyText"><span class="f_BodyText">Der Entwickler hat sich gute Kennzahlen für das zu entwickelnde System auszudenken bzw. zu definieren und er muß die Daten bei der Entwicklung sammeln und dafür sorgen, dass die Daten an Prometheus geschickt werden.</span></p>
-<h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">&nbsp;</span></h2>
+<h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">Einführung</span></h2>
+<p class="p_BodyText"><span class="f_BodyText">Wenn Prometheus Daten sammelt, dann geht die Initiative i.d.R. von dem Prometheus-Server aus. Das bedeutet dann natürlich auch, dass das abgefragte System auch erreichbar ist. Das muß nun nicht immer der Fall sein.</span></p>
+<p class="p_BodyText"><span class="f_BodyText">In solchen Fällen muß das Zielsystem die Möglichkeit besitzen, die Prometheus-Daten aufzubereiten und diese dann auch an Prometheus zu senden - und dazu dient das PUSH-Interface von Prometheus.</span></p>
+<h3 class="p_Heading3" style="page-break-after: avoid;"><span class="f_Heading3">Absicherung</span></h3>
+<p class="p_BodyText"><span class="f_BodyText">Normalerweise lauscht das PUSH-Interface auf allen Schnittstellen. Das sollte man unterbinden, denn ohne Absicherung kann dann jeder Daten senden an das Interface. Also besser absichern, und es sollte nur noch auf der Adresse &quot;127.0.0.1:9091&quot; lauschen (mit der Option &quot;--web-listenaddress=&quot;127.0.0.1:9091&quot;).</span></p>
+<p class="p_BodyText"><span class="f_BodyText">Damit das PUSH-Interface trotzdem von außen erreichbar ist, wird es durch Apache durchgeschleust. So etwas macht die folgende Konfiguration in einer Apache-Domain-Datei:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">ProxyPass&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;/pushgateway/&quot;&nbsp;&quot;http://127.0.0.1:9091/&quot;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">ProxyPassReverse&nbsp;&nbsp;&quot;/pushgateway/&quot;&nbsp;&quot;http://127.0.0.1:9091/&quot;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&lt;Location&nbsp;&quot;/pushgateway/&quot;&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;AuthType&nbsp;Basic</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;AuthName&nbsp;&quot;Pushgateway&quot;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;AuthUserFile&nbsp;/etc/apache2/pushgateway.htpasswd</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;Require&nbsp;valid-user</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&lt;/Location&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">Und der Zugriff auf diese Resource wird über ein Kennwort gesichert. Die oben definierte Paßwort-Datei kann man einfach mittels:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">sudo&nbsp;htpasswd&nbsp;-c&nbsp;/etc/apache2/pushgateway.htpasswd&nbsp;metrics_pusher</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">erzeugen für einen Benutzer &quot;metrics_pusher&quot;. Diese Informationen werden wir später bei der Gemstone Anbindung benötigen.</span></p>
 
 <!--ZOOMSTOP-->
 </div></div>

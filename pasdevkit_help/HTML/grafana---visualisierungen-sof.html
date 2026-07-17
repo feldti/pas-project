@@ -106,7 +106,7 @@
     </td>
     <td class="topichead" id="idnav">
       
-      <a href="prometheus.html" title="Previous Topic"><span class="hmbtnprev"></span></a>
+      <a href="prometheus-und-gemstone.html" title="Previous Topic"><span class="hmbtnprev"></span></a>
       <a href="introduction.html" title="Parent Chapter"><span class="hmbtntop"></span></a>
       <a href="openapi.html" title="Next Topic"><span class="hmbtnnext"></span></a>
       
@@ -124,7 +124,61 @@
 <h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">Rolle im PAS</span></h2>
 <p class="p_BodyText"><span class="f_BodyText">Grafana wird genutzt, um Informationen von Anwendungen zu sammeln und diese zu visualisieren. Die Daten können von Prometheus eingesammelt werden und dann durch Prometheus an Grafana geschickt werden.</span></p>
 <h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">Download</span></h2>
-<p class="p_BodyText"><span class="f_BodyText">Über diesen <a href="https://grafana.com/grafana/download?pg=oss-graf&amp;plcmt=hero-btn-1" target="_blank" class="weblink">Link</a> gelangt man zur Download-Seite von Grafana</span></p>
+<p class="p_BodyText"><span class="f_BodyText">Über diesen <a href="https://grafana.com/grafana/download?pg=oss-graf&amp;plcmt=hero-btn-1" target="_blank" class="weblink">Link</a> gelangt man zur Download-Seite von Grafana. Die eigentliche Installation ist unproblematisch.</span></p>
+<h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">Konfiguration</span></h2>
+<p class="p_BodyText"><span class="f_BodyText">Nun noch die Information, wie grafana als Unterseite angesprochen werden sollte:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample"><a href="https://%3Cname%3E.ddns.net/grafana" target="_blank" class="weblink">https://&lt;name&gt;.ddns.net/grafana</a></span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">grafana sollte nicht mehr global erreichbar sein, sondern lediglich über einen proxy. grafana lauscht daher nur noch auf der 127.0.0.1. grafana ist auf dem gleichen Rechner installiert wie Prometheus</span></p>
+<h3 class="p_Heading3" style="page-break-after: avoid;"><span class="f_Heading3">Apache</span></h3>
+<p class="p_BodyText"><span class="f_BodyText">Ich wollte grafana als Unterseite in meine &nbsp;Domain einbinden unter Apache - und da ist nicht mehr ganz so trivial. Die diversen KI Bots legen sich die Backen, die offizielle Dokumentation ist falsch - aber es gab ein BLOG-Post, das die Lösung aufzeigte. </span></p>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">Zuerst der entsprechende Abschnitt in der Konfigurationsdatei von grafana (/etc/grafana/grafana.ini):</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">[server]</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">#&nbsp;Protocol&nbsp;(http,&nbsp;https,&nbsp;h2,&nbsp;socket,&nbsp;socket_h2)</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">;protocol&nbsp;=&nbsp;http</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">#&nbsp;Minimum&nbsp;TLS&nbsp;version&nbsp;allowed.&nbsp;By&nbsp;default,&nbsp;this&nbsp;value&nbsp;is&nbsp;empty.&nbsp;Accepted&nbsp;values&nbsp;are:&nbsp;TLS1.2,&nbsp;TLS1.3.&nbsp;If&nbsp;nothing&nbsp;is&nbsp;set&nbsp;TLS1.2&nbsp;would&nbsp;be&nbsp;taken</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">;min_tls_version&nbsp;=&nbsp;&quot;&quot;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">#&nbsp;The&nbsp;ip&nbsp;address&nbsp;to&nbsp;bind&nbsp;to,&nbsp;empty&nbsp;will&nbsp;bind&nbsp;to&nbsp;all&nbsp;interfaces</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">http_addr&nbsp;=&nbsp;127.0.0.1</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">#&nbsp;The&nbsp;http&nbsp;port&nbsp;to&nbsp;use</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">;http_port&nbsp;=&nbsp;3000</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">#&nbsp;The&nbsp;public&nbsp;facing&nbsp;domain&nbsp;name&nbsp;used&nbsp;to&nbsp;access&nbsp;grafana&nbsp;from&nbsp;a&nbsp;browser</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">;domain&nbsp;=&nbsp;localhost</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">#&nbsp;Redirect&nbsp;to&nbsp;correct&nbsp;domain&nbsp;if&nbsp;host&nbsp;header&nbsp;does&nbsp;not&nbsp;match&nbsp;domain</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">#&nbsp;Prevents&nbsp;DNS&nbsp;rebinding&nbsp;attacks</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">;enforce_domain&nbsp;=&nbsp;false</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">#&nbsp;The&nbsp;full&nbsp;public&nbsp;facing&nbsp;url&nbsp;you&nbsp;use&nbsp;in&nbsp;browser,&nbsp;used&nbsp;for&nbsp;redirects&nbsp;and&nbsp;emails</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">#&nbsp;If&nbsp;you&nbsp;use&nbsp;reverse&nbsp;proxy&nbsp;and&nbsp;sub&nbsp;path&nbsp;specify&nbsp;full&nbsp;url&nbsp;(with&nbsp;sub&nbsp;path)</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">root_url&nbsp;=&nbsp;https://<a href="<name>.ddns.net" target="_blank" class="weblink">&lt;name&gt;.ddns.net</a>/grafana/</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">#&nbsp;Serve&nbsp;Grafana&nbsp;from&nbsp;subpath&nbsp;specified&nbsp;in&nbsp;`root_url`&nbsp;setting.&nbsp;By&nbsp;default&nbsp;it&nbsp;is&nbsp;set&nbsp;to&nbsp;`false`&nbsp;for&nbsp;compatibility&nbsp;reasons.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">;serve_from_sub_path&nbsp;=&nbsp;false</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">Und dann noch der Eintrag in der host-config-Datei unter Apache:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">#</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">#&nbsp;Grafana&nbsp;als&nbsp;Unterseite</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">#</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">ProxyPreserveHost&nbsp;On</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">ProxyPass&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/grafana/api/live/&nbsp;&nbsp;http://localhost:3000/api/live/&nbsp;&nbsp;upgrade=websocket</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">ProxyPass&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/grafana/&nbsp;http://localhost:3000/</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">ProxyPassReverse&nbsp;/grafana/&nbsp;http://localhost:3000/</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<h3 class="p_Heading3" style="page-break-after: avoid;"><span class="f_Heading3">Prometheus</span></h3>
+<p class="p_BodyText"><span class="f_BodyText">Wenn man grafana geöffnet hat, sollte man als erstes den Prometheus Server eintragen, damit man eine Datenquelle hat. Da Prometheus auf dem gleichen Rechnerinstalliert ist, kann man einfach &quot;<a href="http://localhost:9090%22" target="_blank" class="weblink">http://localhost:9090&quot;</a> angeben.</span></p>
+<p class="p_BodyText"><span class="f_BodyText">Und dann kann der Spaß mit den Dashboards losgehen.</span></p>
 
 <!--ZOOMSTOP-->
 </div></div>

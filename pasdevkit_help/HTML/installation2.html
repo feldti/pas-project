@@ -1,13 +1,13 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-   <title>Prometheus - Erfassung Statistikdaten Softwaresysteme</title>
+   <title>Prometheus - Erfassung Statistikdaten Softwaresysteme &gt; Installation</title>
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
    <meta name="generator" content="Help &amp; Manual" />
    <meta name="keywords" content="" />
-   <meta name="description" content="Rolle in PAS Prometheus soll als Datenhalter für Kennzahlen unseres Softwaresystems dienen. Es ist ein weit verbreitetes System in der IT-Welt. &nbsp;Der Entwickler hat sich gute..." />
+   <meta name="description" content="Bei der Installation habe ich die precompiled Variante ausgewählt (hier mal die ARM64 Variante). Der Download erfolgt über diese Seite. Die folgenden drei Programme sollten..." />
    <link type="text/css" href="default.css" rel="stylesheet" />
    <link type="text/css" href="custom.css" rel="stylesheet" />
 
@@ -79,7 +79,7 @@
    <script type="text/javascript" src="helpman_topicinit.js"></script>
 
    <script type="text/javascript">
-     HMSyncTOC("index.html", "prometheus.html");
+     HMSyncTOC("index.html", "installation2.html");
    </script>
    <script type="text/javascript" src="highlight.js"></script>
    <script type="text/javascript">
@@ -89,26 +89,26 @@
 <body>
 
 
-<div id="printheader"><h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Prometheus - Erfassung Statistikdaten Softwaresysteme</span></h1>
+<div id="printheader"><h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Installation</span></h1>
 </div>
 <div id="idheader">
 <div id="idheaderbg">
 <table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
   <tr>
     <td class="topichead" style="text-align:left; vertical-align:bottom">
-      <p class="sync-toc">&lt;&lt; <a rel="nofollow" href="index.html?prometheus.html" target="_top">Click to Display Table of Contents</a> &gt;&gt;</p>
+      <p class="sync-toc">&lt;&lt; <a rel="nofollow" href="index.html?installation2.html" target="_top">Click to Display Table of Contents</a> &gt;&gt;</p>
       <p class="crumbs"><b>Navigation:</b>&nbsp;
-      &raquo;No topics above this level&laquo;
-      </p>
+      
+      <a href="prometheus.html">Prometheus - Erfassung Statistikdaten Softwaresysteme</a>&nbsp;&gt;</p>
    
-      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Prometheus - Erfassung Statistikdaten Softwaresysteme</span></h1>
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Installation</span></h1>
 
     </td>
     <td class="topichead" id="idnav">
       
-      <a href="importieren-der-quelltexte-nac.html" title="Previous Topic"><span class="hmbtnprev"></span></a>
-      <a href="introduction.html" title="Parent Chapter"><span class="hmbtntop"></span></a>
-      <a href="installation2.html" title="Next Topic"><span class="hmbtnnext"></span></a>
+      <a href="prometheus.html" title="Previous Topic"><span class="hmbtnprev"></span></a>
+      <a href="prometheus.html" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="anlieferung-prometheus---push-.html" title="Next Topic"><span class="hmbtnnext"></span></a>
       
     </td>
   </tr>  
@@ -121,10 +121,23 @@
 <!--[if lt IE 7]><div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
 
 <!--ZOOMRESTART-->
-<h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">Rolle in PAS</span></h2>
-<p class="p_BodyText"><span class="f_BodyText">Prometheus soll als Datenhalter für Kennzahlen unseres Softwaresystems dienen. Es ist ein weit verbreitetes System in der IT-Welt. </span></p>
-<p class="p_BodyText"><span class="f_BodyText">Der Entwickler hat sich gute Kennzahlen für das zu entwickelnde System auszudenken bzw. zu definieren und er muß die Daten bei der Entwicklung sammeln und dafür sorgen, dass die Daten an Prometheus geschickt werden.</span></p>
-<h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">&nbsp;</span></h2>
+<p class="p_BodyText"><span class="f_BodyText">Bei der Installation habe ich die precompiled Variante ausgewählt (hier mal die ARM64 Variante). Der Download erfolgt über <a href="https://prometheus.io/download/" target="_blank" class="weblink">diese</a> Seite. Die folgenden drei Programme sollten heruntergeladen werden:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">wget&nbsp;<a href="https://github.com/prometheus/pushgateway/releases/download/v1.11.3/pushgateway-1.11.3.linux-arm64.tar.gz" target="_blank" class="weblink">https://github.com/prometheus/pushgateway/releases/download/v1.11.3/pushgateway-1.11.3.linux-arm64.tar.gz</a></span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">wget&nbsp;<a href="https://github.com/prometheus/node_exporter/releases/download/v1.12.1/node_exporter-1.12.1.linux-arm64.tar.gz" target="_blank" class="weblink">https://github.com/prometheus/node_exporter/releases/download/v1.12.1/node_exporter-1.12.1.linux-arm64.tar.gz</a></span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">wget&nbsp;<a href="https://github.com/prometheus/prometheus/releases/download/v3.13.1/prometheus-3.13.1.linux-arm64.tar.gz" target="_blank" class="weblink">https://github.com/prometheus/prometheus/releases/download/v3.13.1/prometheus-3.13.1.linux-arm64.tar.gz</a></span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">Das pushgateway wird benötigt, wenn die Daten von einem entfernten Rechner nicht abgerufen werden können, sondern nur angeliefert werden können.</span></p>
+<p class="p_BodyText"><span class="f_BodyText">prometheus selbst ist der Server und die Datenhaltung.</span></p>
+<p class="p_BodyText"><span class="f_BodyText">Der node_exporter sammelt Daten für die lokale Maschine. Die Konfiguration des prometheus muß um diese Quelle erweitert werden:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">scrape_configs:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;-&nbsp;job_name:&nbsp;&quot;node_local&quot;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;static_configs:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;targets:&nbsp;[&quot;localhost:9100&quot;]</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
 
 <!--ZOOMSTOP-->
 </div></div>
