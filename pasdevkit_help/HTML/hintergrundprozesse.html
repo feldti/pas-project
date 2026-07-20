@@ -1,13 +1,13 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-   <title>Hintergrundprozesse</title>
+   <title>Programmiermodell &gt; Hintergrundprozesse</title>
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
    <meta name="generator" content="Help &amp; Manual" />
    <meta name="keywords" content="" />
-   <meta name="description" content="Wenn es zu lange dauert ... Ein API-Call in der Kategorie &quot;long&quot; oder &quot;memory&quot; sollte trotzdem zügig sein. Synchrone API-Calls mit einer Dauer von mehr als 60 Sekunden sind..." />
+   <meta name="description" content="Wenn es zu lange dauert ... Ein API-Call in der Kategorie &quot;long&quot; oder &quot;memory&quot; sollte trotzdem zügig sein. Synchrone API-Calls mit einer Dauer von mehr als 60 Sekunden sind kein" />
    <link type="text/css" href="default.css" rel="stylesheet" />
    <link type="text/css" href="custom.css" rel="stylesheet" />
 
@@ -98,8 +98,8 @@
     <td class="topichead" style="text-align:left; vertical-align:bottom">
       <p class="sync-toc">&lt;&lt; <a rel="nofollow" href="index.html?hintergrundprozesse.html" target="_top">Click to Display Table of Contents</a> &gt;&gt;</p>
       <p class="crumbs"><b>Navigation:</b>&nbsp;
-      &raquo;No topics above this level&laquo;
-      </p>
+      
+      <a href="programmiermodell.html">Programmiermodell</a>&nbsp;&gt;</p>
    
       <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Hintergrundprozesse</span></h1>
 
@@ -107,7 +107,7 @@
     <td class="topichead" id="idnav">
       
       <a href="api-requests.html" title="Previous Topic"><span class="hmbtnprev"></span></a>
-      <a href="erfahrungsbericht.html" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="programmiermodell.html" title="Parent Chapter"><span class="hmbtntop"></span></a>
       <a href="rabbitmq-und-postgresql-anbind.html" title="Next Topic"><span class="hmbtnnext"></span></a>
       
     </td>
@@ -121,6 +121,7 @@
 <!--[if lt IE 7]><div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
 
 <!--ZOOMRESTART-->
+<div class="p_Heading2" style="text-align: center; page-break-after: avoid;"><div style="margin:0 auto 0 auto;width:75%;max-width:1024px;height:auto;"><img alt="unterprozesse" style="width:100%;height:auto;border:none" src="unterprozesse.jpeg"/></div></div>
 <h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">Wenn es zu lange dauert ...</span></h2>
 <p class="p_BodyText"><span class="f_BodyText">Ein API-Call in der Kategorie &quot;long&quot; oder &quot;memory&quot; sollte trotzdem zügig sein. Synchrone API-Calls mit einer Dauer von mehr als 60 Sekunden sind keine Lösung und es wird zu problematischen Unterbrechnungen in den Anwendungen kommen. Ein Ausweg ist nur die Implementierung einer komfortalen Background-Processing Unit.</span></p>
 <p class="p_BodyText"><span class="f_BodyText">Aus Benutzersicht wird der entsprechende Call getätigt, ein Wartedialog erscheint und der Benutzer bekommt Informationen über sein Hintergrundprozess angezeigt:</span></p>

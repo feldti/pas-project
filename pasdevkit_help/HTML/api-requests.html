@@ -1,13 +1,13 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-   <title>API Requests</title>
+   <title>Programmiermodell &gt; API Requests</title>
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
    <meta name="generator" content="Help &amp; Manual" />
    <meta name="keywords" content="" />
-   <meta name="description" content="Effiziente Aufrufe auf eine begrenzte Anzahl von Antwortprozessen" />
+   <meta name="description" content="API Strukturen Bei der Plattform &quot;Gemstone/S&quot; wurde zum ersten Male API-Aufrufe in PUM definiert. Da mussten erst einmal einige Festlegungen getroffen werden (einige davon sind" />
    <link type="text/css" href="default.css" rel="stylesheet" />
    <link type="text/css" href="custom.css" rel="stylesheet" />
 
@@ -98,16 +98,16 @@
     <td class="topichead" style="text-align:left; vertical-align:bottom">
       <p class="sync-toc">&lt;&lt; <a rel="nofollow" href="index.html?api-requests.html" target="_top">Click to Display Table of Contents</a> &gt;&gt;</p>
       <p class="crumbs"><b>Navigation:</b>&nbsp;
-      &raquo;No topics above this level&laquo;
-      </p>
+      
+      <a href="programmiermodell.html">Programmiermodell</a>&nbsp;&gt;</p>
    
       <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">API Requests</span></h1>
 
     </td>
     <td class="topichead" id="idnav">
       
-      <a href="zugriff-auf-objekte-in-der-dat.html" title="Previous Topic"><span class="hmbtnprev"></span></a>
-      <a href="erfahrungsbericht.html" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="programmiermodell.html" title="Previous Topic"><span class="hmbtnprev"></span></a>
+      <a href="programmiermodell.html" title="Parent Chapter"><span class="hmbtntop"></span></a>
       <a href="hintergrundprozesse.html" title="Next Topic"><span class="hmbtnnext"></span></a>
       
     </td>
@@ -121,6 +121,19 @@
 <!--[if lt IE 7]><div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
 
 <!--ZOOMRESTART-->
+<div class="p_Heading2" style="text-align: center; page-break-after: avoid;"><div style="margin:0 auto 0 auto;width:75%;max-width:1024px;height:auto;"><img alt="api-request-answer" style="width:100%;height:auto;border:none" src="api-request-answer.jpeg"/></div></div>
+<h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">API Strukturen</span></h2>
+<p class="p_BodyText"><span class="f_BodyText">Bei der Plattform &quot;Gemstone/S&quot; wurde zum ersten Male API-Aufrufe in PUM definiert. Da mussten erst einmal einige Festlegungen getroffen werden (einige davon sind &quot;best practices&quot; Ratschläge):</span></p>
+<p class="p_BodyText" style="text-indent: 0; padding-left: 13px; margin-left: 0;"><span class="f_BodyText" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#8226;</span><span class="f_BodyText">Pro API Call kann man nur </span><strong class="f_BodyText" style="font-weight: bold;">eine</strong><span class="f_BodyText"> Parameterstruktur und </span><strong class="f_BodyText" style="font-weight: bold;">eine</strong><span class="f_BodyText"> Ergebnisstruktur definieren. Diese Daten werden als JSON-Strukturen an- bzw. ausgeliefert.</span></p>
+<p class="p_BodyText" style="text-indent: 0; padding-left: 26px; margin-left: 0;"><span class="f_BodyText" style="font-family: 'Courier New';display:inline-block;width:13px;margin-left:-13px">o</span><span class="f_BodyText">Es gibt CRUD-Calls, die bis zu vier API-Calls bestehen. CRUD-Calls werden als &quot;ganzes&quot; editiert.</span></p>
+<p class="p_BodyText" style="text-indent: 0; padding-left: 39px; margin-left: 0;"><span class="f_BodyText" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#9642;</span><span class="f_BodyText">Innerhalb eines CRUD-Calls können die Parameterklasse oder die Ergebnisstruktur mehrfach genutzt werden, ansonsten sollte man darauf achten, daß jeder API-Call seine eigenen Strukturen nutzt.</span></p>
+<p class="p_BodyText" style="text-indent: 0; padding-left: 39px; margin-left: 0;"><span class="f_BodyText" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#9642;</span><span class="f_BodyText">Bei dem CRUD-Read Call kann man Filteranweisungen, Sortierungsanweisungen und Paging-Anweisungen mitgeben. Das Format dieser Strukturen entsprechen Sencha ExtJS: Ein String mit einer JSON-Struktur.</span></p>
+<p class="p_BodyText" style="text-indent: 0; padding-left: 26px; margin-left: 0;"><span class="f_BodyText" style="font-family: 'Courier New';display:inline-block;width:13px;margin-left:-13px">o</span><span class="f_BodyText">Lediglich sehr allgemeine Parameter- oder Ergebnisstrukturen sollten zwischen den Calls genutzt werden: z.B. ein Call, der true oder false zurückgibt oder nur einen String oder eine ID oder eine Zahl.</span></p>
+<p class="p_BodyText" style="text-indent: 0; padding-left: 26px; margin-left: 0;"><span class="f_BodyText" style="font-family: 'Courier New';display:inline-block;width:13px;margin-left:-13px">o</span><span class="f_BodyText">Jeder Call gibt zusätzliche Informationen zurück: Erfolgsfall (true, false), Interne Abarbeitungszeit in ms, Antwortprozeß-ID, im Fehlerfall eine Error-Struktur</span></p>
+<p class="p_BodyText" style="text-indent: 0; padding-left: 13px; margin-left: 0;"><span class="f_BodyText" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#8226;</span><strong class="f_BodyText" style="font-weight: bold;">Es gibt neben der &quot;persistenten&quot; Hierarchie nun auch eine API-Hierarchie. Klassen der API-Hierarchie dienen der Abarbeitung der API-Calls, bzw. beim Export und Import von Daten in das System. Dann sollten API-Klassen genutzt werden - denn nur bei API-Klassen, werden automatisch JSON-Strukturen angelegt bzw. unterstützt. </strong><span class="f_BodyText">Diese Festlegung ist der sichtbarste Teil der gesamten API Definitionen.</span></p>
+<p class="p_BodyText" style="text-indent: 0; padding-left: 13px; margin-left: 0;"><span class="f_BodyText" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#8226;</span><span class="f_BodyText">Das System hat ein festes API-Format bei &quot;Datum&quot;, &quot;Uhrzeit&quot; und &quot;Zeitstempel&quot; definiert. Enumerationen werden als &quot;strings&quot; übertragen.</span></p>
+<p class="p_BodyText" style="text-indent: 0; padding-left: 13px; margin-left: 0;"><span class="f_BodyText" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#8226;</span><span class="f_BodyText">Um API-Calls definieren zu können, muss erst einmal eine API-Deklaration angelegt werden, mit der man praktisch eine Versionierung der API Calls erreichen kann. &nbsp;Diese API-Deklaration definiert Teile der URL (z.B. Kürzl und Versionsnummer) - aber wir haben das Feature in 10 Jahren nicht genutzt, weil wir in der Regel die alten API Calls weiterpflegen mussten. Wir haben dann namentlich andere API Calls angelegt, die dann zusätzliche Werte aufnehmen konnten.</span></p>
+<p class="p_BodyText" style="text-indent: 0; padding-left: 26px; margin-left: 0;"><span class="f_BodyText" style="font-family: 'Courier New';display:inline-block;width:13px;margin-left:-13px">o</span><span class="f_BodyText">Als weitere Unterteilung kann man API-Gruppen definieren - z.B. alle Calls, die Benutzersitzungen betreffen, oder alle Calls, die Projekte betreffen.</span></p>
 <h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">Effiziente Aufrufe auf eine begrenzte Anzahl von Antwortprozessen</span></h2>
 <p class="p_BodyText"><span class="f_BodyText">Ja, ja - und gleich das nächste Problem. API Aufrufe, die auf eine begrenzte Anzahl von Antwortprozessen treffen. Auch hier kann es schnell zu Behinderungen kommen. Ein mächtiges Dispatching hilft hier sehr stark. Leider habe ich bisher kaum sehr gute Lösungen gefunden, also müssen die typischen Hausmittel von Apache und Co. reichen.</span></p>
 <p class="p_BodyText"><span class="f_BodyText">Bei jeder Implementierung eines API-Calls sollte der Entwickler einschätzen können</span></p>
@@ -134,8 +147,8 @@
 <p class="p_BodyText" style="text-indent: 0; padding-left: 13px; margin-left: 0;"><span class="f_BodyText" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#8226;</span><span class="f_BodyText">long - langer Call, nur unwesntlich mehr Memory notwendig als normal</span></p>
 <p class="p_BodyText" style="text-indent: 0; padding-left: 13px; margin-left: 0;"><span class="f_BodyText" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#8226;</span><span class="f_BodyText">memory - langer Call mit viel Speicher notwendig</span></p>
 <p class="p_BodyText" style="text-indent: 0; padding-left: 13px; margin-left: 0;"><span class="f_BodyText" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#8226;</span><span class="f_BodyText">extdb - Call zu externen Datenbank</span></p>
-<p class="p_BodyText"><span class="f_BodyText">Die jeweiligen Prozesse sollten nur die Calls durchführen, die zu ihrer Kategorie gehören. Alternative Ansätze hatte ich bereits früher in diesem Dokument &nbsp;angedeutet.</span></p>
-<p class="p_BodyText"><span class="f_BodyText">Wenn diese Kategorisierung nicht mehr aushält - dann muß ein ordentliches Background-Processing programmiert werden. Dazu mehr im nächsten Abschnitt</span></p>
+<p class="p_BodyText"><span class="f_BodyText">Die jeweiligen Prozesse sollten nur die Calls durchführen, die zu ihrer Kategorie gehören. </span></p>
+<p class="p_BodyText"><span class="f_BodyText">Wenn diese Kategorisierung nicht ausreicht - dann muß ein ordentliches Background-Processing programmiert werden.</span></p>
 <p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
 <p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
 
