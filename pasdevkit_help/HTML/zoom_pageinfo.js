@@ -258,7 +258,7 @@ pagedata = [ ["./linux---ubuntu-24_04.html","Linux - Ubuntu 24.04","Einführung 
 ["./dotnet-core-6_0_x.html","Linux - Ubuntu 24.04 &#62; DotNet Core","Einführung Die Installation für .Net Core unter Ubuntu ist hier beschrieben. Außerdem kann man die einzelne Befehle in dem Konfigurationstemplate ...",""],
 ["./pas_start_stone_app_sh.html","pas_python - Skripte und Beispielcode &#62; pas_start_stone_app.sh","Beschreibung Ein Skript, das die komplette Anwendung startet. Dieses Skript wird auch bei der Ausführung von service-Diensten (service im Sinne vo...",""],
 ["./api-richtlinien.html","PAS - Softwareentwicklung &#62; API Vorgaben","Implementierungen der API Jeder API Call erhält in PUM folgende Informationen Der Call erhält eine Aufrufparameter-Struktur. Diese Struktur ist al...",""],
-["./buecher.html","Bücher","Auch in Zeiten des Internets kann man gerne Bücher lesen:",""],
+["./buecher.html","Bücher","Auch in Zeiten des Internets kann man gerne Bücher lesen. Was kann man also lesen ?",""],
 ["./pas---pum-application-stack.html","PAS - PUM Application Stack","PAS - der Application Stack Während meiner Arbeit mit Gemstone/S hat es sich gezeigt, daß ich immer wieder und wieder die gleichen Komponenten ein...",""],
 ["./session-activitystructure.html","PUM - Modellierung und Codeerzeugung &#62; Strukturen und Muster &#62; Session ActivityStructure","Geben Sie hier den Text ein.",""],
 ["./psql---installation.html","PostgreSQL - Datenbank &#62; PSQL - Installation","Installation Die Installation unterscheidet sich, ob man einen lokalen oder einen entfernten Datenbank-Server nutzen will. Eine genauere Beschreib...",""],
