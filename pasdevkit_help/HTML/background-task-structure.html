@@ -1,0 +1,371 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <title>PUM - Modellierung und Codeerzeugung &gt; Strukturen und Muster &gt; Background Task Structure</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta name="description" content="Beschreibung Die Background Task Structure dient dazu, eine abstrakte Oberklasse anzubieten, von denen man im Modell Unterklassen definiert. In diesen Unterklassen werden..." />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <link type="text/css" href="custom.css" rel="stylesheet" />
+
+   <style TYPE="text/css" media="screen"> 
+      html, body { margin:0; 
+        padding:0; 
+        background: #ffffff; 
+      } 
+      div#printheader { display: none; }
+      #idheader { 
+        width:100%; 
+        height:auto; 
+        padding: 0; 
+        margin: 0;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+      } 
+      /* The "min-height" for "#idheader table" ensures that the (blue) header of the topic
+         has at least the same height as the header of the navigation panel left of it */
+      #idheader table { background: #f5f5f5; min-height: 59px }             
+      #idheader h1 span { color: #157fcc }     
+      #idnav {
+        text-align: right;
+        width: 126px;
+        vertical-align: middle;        
+      } 
+      #idnav a { text-decoration: none }
+      #idnav span {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-left: 4px;
+        background:url('hm_webhelp_buttons_grey.png') top left no-repeat;
+      } 
+      #idnav a span {
+        background-image:url('hm_webhelp_buttons_blue.png');
+      } 
+      #idnav a span:hover {
+        background-image:url('hm_webhelp_buttons_orange.png');
+      } 
+      #idnav span.hmbtnprev { background-position: 0 -32px }
+      #idnav span.hmbtnnext { background-position: -24px -32px }
+      #idnav span.hmbtntop  { background-position: -48px -32px }
+      #idnav span.hmbtntoggle  { width: 20px; background-position: -70px -32px }
+      #idnav span.hmbtnprint  { background-position: -88px -32px }
+
+      #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+      #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+      #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+      #callout-table a {text-decoration: none; color: blue;}
+      #callout-table a:visited {text-decoration: none; color: blue;}
+      #overview-table a {text-decoration: none; color: black;}
+      #overview-table a:visited {text-decoration: none; color: black;}
+      #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}       
+      p.help-url { margin: 20px 0 5px 0; text-align: center; font-size: 80%; text-decoration: none }      
+      #switchtoggles { text-align: right; padding: 0 2px 0 0; font-size: 90%; } 
+      .sync-toc { color: #157fcc; font-size: 8pt; font-weight: bold; display: none; }
+      .sync-toc a { color: #157fcc; text-decoration: none; font-weight: bold;}
+      .sync-toc a:visited { color: #157fcc; }
+      .sync-toc a:hover { text-decoration: underline; }
+      a.hmanchor { display: inline-block; margin-top: -4em; padding-top: 4em }	  
+   </style>
+   <style TYPE="text/css" media="print">
+      div#idheader, img.dropdown-toggle-icon, p.help-url { display:none } 
+   </style>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <script type="text/javascript">
+     HMSyncTOC("index.html", "background-task-structure.html");
+   </script>
+   <script type="text/javascript" src="highlight.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){highlight();});
+   </script>
+</head>
+<body>
+
+
+<div id="printheader"><h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Background Task Structure</span></h1>
+</div>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left; vertical-align:bottom">
+      <p class="sync-toc">&lt;&lt; <a rel="nofollow" href="index.html?background-task-structure.html" target="_top">Click to Display Table of Contents</a> &gt;&gt;</p>
+      <p class="crumbs"><b>Navigation:</b>&nbsp;
+      
+      <a href="pum---modellierung-und-codeerz.html">PUM - Modellierung und Codeerzeugung</a> &gt; <a href="chapter-2.html">Strukturen und Muster</a>&nbsp;&gt;</p>
+   
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Background Task Structure</span></h1>
+
+    </td>
+    <td class="topichead" id="idnav">
+      
+      <a href="base-stack-model.html" title="Previous Topic"><span class="hmbtnprev"></span></a>
+      <a href="chapter-2.html" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="pattern-rpcjson-errorstructure.html" title="Next Topic"><span class="hmbtnnext"></span></a>
+      
+    </td>
+  </tr>  
+</table>
+</div>
+</div>  
+
+<div id="idcontent"><div id="innerdiv">
+<!-- Ask Internet Explorer 6.users to update their obsolete and dangerous browser --> 
+<!--[if lt IE 7]><div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
+
+<!--ZOOMRESTART-->
+<h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">Beschreibung</span></h2>
+<p class="p_BodyText"><span class="f_BodyText">Die Background Task Structure dient dazu, eine abstrakte Oberklasse anzubieten, von denen man im Modell Unterklassen definiert.</span></p>
+<p class="p_BodyText"><span class="f_BodyText">In diesen Unterklassen werden Methoden definiert, die für die Durchführung des Tasks notwendig sind.</span></p>
+<h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">Datenstrukturen</span></h2>
+<p class="p_BodyText"><span class="f_BodyText">Es wird ein TaskManager pro Customer angelegt (Mandatenfähigkeit) bzw. bei der Projektdatei. Jeder dieser TaskManager</span></p>
+<p class="p_BodyText"><span class="f_BodyText">Es wird eine abstrakte Oberklasse definiert, von denen man im Modell Unterklassen definiert.</span></p>
+<p class="p_BodyText"><span class="f_BodyText">In diesen Unterklassen werden Methoden definiert, die für die Durchführung des Tasks notwendig sind.</span></p>
+<p class="p_BodyText"><span class="f_BodyText">Folgende Informationen hält die Oberklasse</span></p>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+<div style="text-align: center; text-indent: 0; padding: 0 0 0 0; margin: 0 0 10px 0;"><table style="margin:0 auto; width:75%; border:solid 2px #000000; border-spacing:0; border-collapse:collapse;">
+<thead>
+<tr>
+<th style="vertical-align:top; background-color:#99CCFF; padding:0; border:solid thin #000000;" scope="col"><p class="p_BodyText" style="text-align: center;"><span class="f_T_Menu10p">Name des Attributes</span></p>
+</th>
+<th style="vertical-align:top; background-color:#99CCFF; padding:0; border:solid thin #000000;" scope="col"><p class="p_Normal" style="text-align: center;"><span class="f_T_Menu10p">Beschreibung</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_BodyText"><span class="f_BodyText">createdTS</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Normal">Timestamp, wann der Task angelegt wurde</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_BodyText"><span class="f_BodyText">finishedTS</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Normal">Timestamp, wann der Task beendet wurde</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_BodyText"><span class="f_BodyText">startedTS</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Normal">Timestamp, wann der Task seine Arbeit begonnen hat</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_BodyText"><span class="f_BodyText">externalAbortFlag</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Normal">Flag (True, false), das definiert, daß der Task abgebrochen werden soll</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_BodyText"><span class="f_BodyText">progressPercent</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Normal">Integer (0 .. 100), Progress Indikator in %</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_BodyText"><span class="f_BodyText">title</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Normal">Name des Tasks</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_BodyText"><span class="f_BodyText">taskCommand</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Normal">Enum, der den Typ des Hintergrundprozessen definiert</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_BodyText"><span class="f_BodyText">taskCode</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Normal">Enum, der den Abschlußcode des Tasks definiert</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_BodyText"><span class="f_BodyText">taskState</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Normal">Enum, der den aktuellen Zustand des Status zeigt</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_BodyText"><span class="f_BodyText">resultJSON</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Normal">Ergebnisstruktur als json-String</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_BodyText"><span class="f_BodyText">resultTypeName</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Normal">Klassenname des Ergebnisses</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_BodyText"><span class="f_BodyText">eventsEnabled</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Normal">Flag (True, False), das definiert, ob an die Session ein Event geschcikt werden soll.</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_BodyText"><span class="f_BodyText">errorString</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Normal">String, der einen eventuellen &nbsp;Fehler beschreibt</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">Für jeden spezifischen Background Tasks muß der Entwickler eine Ergebnisstuktur definieren und auch eine Parameterstruktur. Beim Registrieren des Background-Tasks werden die JSON-Strings für die Parameter deserialisiert und als Assoziation abgelegt. Weiterhin gibt es eine Assoziation zu einer eventuellen Session, die über die Fortschritte via Event benachrichtigt werden sollte. Und eine Assoziation zu dem Benutzer, der diesen Task erzeugt hat.</span></p>
+<h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">Methoden-Strukturen</span></h2>
+<p class="p_BodyText"><span class="f_BodyText">Folgende Methoden müssen in den jeweiligen Unterkassen implementiert werden</span></p>
+<p class="p_BodyText" style="text-indent: 0; padding-left: 13px; margin-left: 0;"><span class="f_BodyText" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#8226;</span><span class="f_BodyText">checkTask - Überprüft, ob alle Parameter gesetzt sind</span></p>
+<p class="p_BodyText" style="text-indent: 0; padding-left: 13px; margin-left: 0;"><span class="f_BodyText" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#8226;</span><span class="f_BodyText">runTask - startet die Bearbeitung des Tasks. Die Abarbeitung erfolgt in einem eigenen GEM-Task</span></p>
+<p class="p_BodyText" style="text-indent: 0; padding-left: 13px; margin-left: 0;"><span class="f_BodyText" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#8226;</span><span class="f_BodyText">abortTask - bricht den Task ab</span></p>
+<p class="p_BodyText" style="text-indent: 0; padding-left: 13px; margin-left: 0;"><span class="f_BodyText" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#8226;</span><span class="f_BodyText">finishTask - beendet den Task</span></p>
+<h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">API-Strukturen</span></h2>
+<p class="p_BodyText"><span class="f_BodyText">Weiterhin werden die folgenden API-Calls definiert:</span></p>
+<p class="p_BodyText" style="text-indent: 0; padding-left: 13px; margin-left: 0;"><span class="f_BodyText" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#8226;</span><span class="f_BodyText">AbortTask - Setzt das externalAbortFlag auf true. Benötigt als Parameter nur die GOP des Task-Objektes.</span></p>
+<p class="p_BodyText" style="text-indent: 0; padding-left: 13px; margin-left: 0;"><span class="f_BodyText" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#8226;</span><span class="f_BodyText">BackgroundTaskList - CRUD Struktur, um die Liste der Tasks bearbeiten zu können. Dabei ist nur der (C),(D) und (R) Call implementiert. Der (D)-Call geht intern über die AbortTask Logik</span></p>
+<h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">TaskManager</span></h2>
+<p class="p_BodyText"><span class="f_BodyText">Der TaskManager verwaltet die Arbeitsqueue. und entfernt auch alle alte Tasks aus der Liste, die älter als n-Stunden sind.</span></p>
+<h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">Event-Strukturen</span></h2>
+<p class="p_BodyText"><span class="f_BodyText">Wenn freigeschaltet, dann werden Events (über ServerSideEvents) an die Session gesandt. Diese Events haben die folgende Struktur:</span></p>
+<div style="text-align: center; text-indent: 0; padding: 0 0 0 0; margin: 0 0 10px 0;"><table style="margin:0 auto; width:75%; border:solid 2px #000000; border-spacing:0; border-collapse:collapse;">
+<thead>
+<tr>
+<th style="vertical-align:top; background-color:#99CCFF; padding:0; border:solid thin #000000;" scope="col"><p class="p_BodyText" style="text-align: center;"><span class="f_T_Menu10p">Name des Attributes</span></p>
+</th>
+<th style="vertical-align:top; background-color:#99CCFF; padding:0; border:solid thin #000000;" scope="col"><p class="p_Normal" style="text-align: center;"><span class="f_T_Menu10p">Beschreibung</span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_BodyText"><span class="f_BodyText">gop</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Normal">gop des Objektes</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_BodyText"><span class="f_BodyText">createdTS</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Normal">Timestamp, wann der Task angelegt wurde</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_BodyText"><span class="f_BodyText">finishedTS</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Normal">Timestamp, wann der Task beendet wurde</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_BodyText"><span class="f_BodyText">startedTS</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Normal">Timestamp, wann der Task seine Arbeit begonnen hat</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_BodyText"><span class="f_BodyText">progressPercent</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Normal">Integer (0 .. 100), Progress Indikator in %</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_BodyText"><span class="f_BodyText">title</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Normal">Name des Tasks</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_BodyText"><span class="f_BodyText">taskCommand</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Normal">Enum, der den Typ des Hintergrundprozessen definiert</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_BodyText"><span class="f_BodyText">taskCode</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Normal">Enum, der den Abschlußcode des Tasks definiert</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_BodyText"><span class="f_BodyText">taskState</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Normal">Enum, der den aktuellen Zustand des Status zeigt</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_BodyText"><span class="f_BodyText">resultJSON</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Normal">Ergebnisstruktur als json-String</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_BodyText"><span class="f_BodyText">resultTypeName</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Normal">Klassenname des Ergebnisses</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_BodyText"><span class="f_BodyText">errorString</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Normal">String, der einen eventuellen &nbsp;Fehler beschreibt</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript">
+
+
+
+  $(document).ready(function(){
+    $(window).bind('resize', function() {
+      var y = $('#idheader').height(); 
+      $('#idcontent').css('margin-top', y);
+      var par = window.parent;
+      if ($( par ).width() <= $( window ).width()+20) {
+        $('#idheader').css('position', 'relative');
+        $('#idcontent').css('margin-top', 0);
+        $('#idbacktotop').css('display', 'block');
+        $('.hmanchor').css('margin-top', -20);
+	$('.hmanchor').css('padding-top', 20);
+      }
+      else {
+        $('#idheader').css('position', 'fixed');
+        $('#idcontent').css('margin-top', $('#idheader').height());
+        $('#idbacktotop').css('display', 'none');
+        $('.hmanchor').css('margin-top', -y-20);
+	$('.hmanchor').css('padding-top', y+20);
+      }
+    });
+    
+    $(window).resize(); //trigger event for initially small displays
+  });
+
+if ((!parent.hmNavigationFrame) && (parent.location) && (parent.location.href)) { $('.sync-toc').show();$('p.crumbs').hide();}
+
+</script>
+</body>
+</html>
