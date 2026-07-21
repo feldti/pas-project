@@ -138,8 +138,12 @@
 <p class="p_BodyText" style="text-indent: 0; padding-left: 13px; margin-left: 0;"><span class="f_BodyText" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#8226;</span><span class="f_BodyText">Es gibt bestimmte Muster bei Gemstone</span></p>
 <p class="p_BodyText" style="text-indent: 0; padding-left: 26px; margin-left: 0;"><span class="f_BodyText" style="font-family: 'Courier New';display:inline-block;width:13px;margin-left:-13px">o</span><span class="f_BodyText">Teilstrukturen werden - nicht erreichbar für Benutzer - aufgebaut und erst beim finalen Commit in den Arbeitsbereich des Benutzer verlegt.</span></p>
 <h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">Dispatchen von Hintergrundprozessen</span></h2>
-<p class="p_BodyText"><span class="f_BodyText">Und ein weiteres Problem: Wenn die Queue der Hintergrundprozesse durch mehrere Gemstone/S Prozesse abgearbeitet werden solleb, könnte man als Benutzer in die Versuchung kommen, durch die UI mehrere Hintergrundprozesse zu starten. Das kann aber zu logischen Problemen führen (Reihenfolge ist nicht mehr gewährleistet). </span></p>
-<p class="p_BodyText"><span class="f_BodyText">Also sollte ein Benutzer immer nur einen Hintergrundprozess gleichzeitig starten können und danach kann er nichts mehr weiter machen. Wenn doch, dann muß der Entwickler sehr vorsichtig sein, was er erlaubt.</span></p>
+<p class="p_BodyText"><span class="f_BodyText">Und ein weiteres Problem: Wenn die Queue der Hintergrundprozesse durch mehrere Gemstone/S Prozesse abgearbeitet werden soll, könnte man als Benutzer in die Versuchung kommen, durch die UI mehrere Hintergrundprozesse zu starten. Das kann aber zu logischen Problemen führen (Reihenfolge ist nicht mehr gewährleistet). </span></p>
+<p class="p_BodyText"><span class="f_BodyText">Also sollte ein Benutzer immer nur </span><strong class="f_BodyText" style="font-weight: bold;">einen</strong><span class="f_BodyText"> Hintergrundprozess gleichzeitig starten können und danach kann er nichts mehr weiter machen. Wenn doch, dann muß der Entwickler sehr vorsichtig sein, was er erlaubt.</span></p>
+<h2 class="p_Heading2" style="page-break-after: avoid;"><span class="f_Heading2">Ein Hintergrundprozeß</span></h2>
+<p class="p_BodyText"><span class="f_BodyText">Jeder mögliche Hintergrundprozeß besitzt eine eigenständige Klasse in PUM, in der alle notwendigen Daten für den Prozeß lokal als Attribute vorhanden sind. Folgende Attribute sind bei einem Hintergrundprozeß definiert:</span></p>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
 
 <!--ZOOMSTOP-->
 </div></div>
